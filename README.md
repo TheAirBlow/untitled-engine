@@ -2,10 +2,10 @@
 This is a Game Maker like game engine written just for fun.
 
 ## Usage
+Every asset have an ID for some reason.
 ### Objects
 Each object have blocks to execute on specific event.
 It should have a name, sprite (optional), draw code (optional).
-Also it have an ID to remember this object in rooms when renamed.
 ### Sounds
 Each sound just contains it's path.
 ### Rooms
