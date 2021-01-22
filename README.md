@@ -2,7 +2,6 @@
 This is a Game Maker like game engine written just for fun.
 
 ## Usage
-Every asset have an ID for some reason.
 ### Objects
 Each object have blocks to execute on specific event.
 It should have a name, sprite (optional), draw code (optional).
