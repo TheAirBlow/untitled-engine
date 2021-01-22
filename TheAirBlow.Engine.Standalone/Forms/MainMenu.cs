@@ -18,8 +18,31 @@ namespace TheAirBlow.Engine.Standalone
             InitializeComponent();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (ProjectSaving.dirtyBit)
+            {
+                var result = MessageBox.Show("Do you want to save the project?", "Untitled Engine",
+                                         MessageBoxButtons.YesNoCancel,
+                                         MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    ProjectSaving.SaveProject();
+                }
+                else e.Cancel = true;
+            }
+        }
+
         private void objectsButton_Click(object sender, EventArgs e)
         {
+            if (ProjectSaving.path == "")
+            {
+                MessageBox.Show("Project is not created or loaded yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Text = $"Untitled Engine | {ProjectSaving.project.name}*";
             Form form = new ObjectsForm();
             form.MdiParent = this;
             form.Show();
@@ -27,6 +50,13 @@ namespace TheAirBlow.Engine.Standalone
 
         private void roomsButton_Click(object sender, EventArgs e)
         {
+            if (ProjectSaving.path == "")
+            {
+                MessageBox.Show("Project is not created or loaded yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Text = $"Untitled Engine | {ProjectSaving.project.name}*";
             Form form = new RoomsForm();
             form.MdiParent = this;
             form.Show();
@@ -34,6 +64,13 @@ namespace TheAirBlow.Engine.Standalone
 
         private void soundsButton_Click(object sender, EventArgs e)
         {
+            if (ProjectSaving.path == "")
+            {
+                MessageBox.Show("Project is not created or loaded yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Text = $"Untitled Engine | {ProjectSaving.project.name}*";
             Form form = new SoundsForm();
             form.MdiParent = this;
             form.Show();
@@ -41,12 +78,12 @@ namespace TheAirBlow.Engine.Standalone
 
         private void runButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("In development!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void compileButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("In development!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void aboutButton_Click(object sender, EventArgs e)

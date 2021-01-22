@@ -30,16 +30,16 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.soundSelect = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.soundSelect = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,27 +60,41 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sound";
             // 
-            // soundSelect
+            // button5
             // 
-            this.soundSelect.FormattingEnabled = true;
-            this.soundSelect.ItemHeight = 16;
-            this.soundSelect.Items.AddRange(new object[] {
-            "Placeholder1",
-            "Placeholder2",
-            "Placeholder3"});
-            this.soundSelect.Location = new System.Drawing.Point(7, 22);
-            this.soundSelect.Name = "soundSelect";
-            this.soundSelect.Size = new System.Drawing.Size(308, 132);
-            this.soundSelect.TabIndex = 0;
+            this.button5.Location = new System.Drawing.Point(53, 232);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 29);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Select...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(7, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "File: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 199);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 202);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name: ";
             // 
             // button2
             // 
@@ -90,26 +104,49 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.button2.TabIndex = 2;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(7, 160);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 32);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // soundSelect
+            // 
+            this.soundSelect.FormattingEnabled = true;
+            this.soundSelect.ItemHeight = 16;
+            this.soundSelect.Location = new System.Drawing.Point(7, 22);
+            this.soundSelect.Name = "soundSelect";
+            this.soundSelect.Size = new System.Drawing.Size(308, 132);
+            this.soundSelect.TabIndex = 0;
+            this.soundSelect.SelectedIndexChanged += new System.EventHandler(this.soundSelect_SelectedIndexChanged);
             // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(3, 54);
+            this.button3.Location = new System.Drawing.Point(3, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(315, 36);
             this.button3.TabIndex = 1;
             this.button3.Text = "Play";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(3, 18);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button4.Location = new System.Drawing.Point(3, 57);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(315, 36);
             this.button4.TabIndex = 2;
             this.button4.Text = "Stop";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox2
             // 
@@ -122,41 +159,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Controls";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 202);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(67, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "File: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(53, 232);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 29);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Select...";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // SoundsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -166,6 +168,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.MaximizeBox = false;
             this.Name = "SoundsForm";
             this.Text = "Untitled Engine | Sounds";
+            this.Load += new System.EventHandler(this.SoundsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -13,10 +13,29 @@ namespace TheAirBlow.Engine.Standalone
     public static class ProjectSaving
     {
         public static string path = "";
-        public static ProjectJSON project = new ProjectJSON();
-        public static RoomsJSON rooms = new RoomsJSON();
-        public static SoundsJSON sounds = new SoundsJSON();
-        public static GameObjectsJSON objects = new GameObjectsJSON();
+        public static bool dirtyBit = false;
+        private static ProjectJSON _project = new ProjectJSON();
+        public static ProjectJSON project { 
+            get { dirtyBit = true; return _project; } 
+            set { dirtyBit = true; _project = value; } 
+        }
+        private static RoomsJSON _rooms = new RoomsJSON();
+        public static RoomsJSON rooms {
+            get { dirtyBit = true; return _rooms; }
+            set { dirtyBit = true; _rooms = value; }
+        }
+        private static SoundsJSON _sounds = new SoundsJSON();
+        public static SoundsJSON sounds
+        {
+            get { dirtyBit = true; return _sounds; }
+            set { dirtyBit = true; _sounds = value; }
+        }
+        private static GameObjectsJSON _objects = new GameObjectsJSON();
+        public static GameObjectsJSON objects
+        {
+            get { dirtyBit = true; return _objects; }
+            set { dirtyBit = true; _objects = value; }
+        }
 
         public static bool SelectPathDialog()
         {
@@ -33,7 +52,7 @@ namespace TheAirBlow.Engine.Standalone
         {
             if (path == "") if (!SelectPathDialog()) return;
 
-            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sprites" };
+            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
             string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
                 "\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
 
@@ -42,8 +61,9 @@ namespace TheAirBlow.Engine.Standalone
                 if (!Directory.Exists(path + dir))
                 {
                     MessageBox.Show("Could not load this project." +
-                        $"\nMissing directory: {dir.Remove(0, 2)}", "Untitled Engine", 
+                        $"\nMissing directory: {dir.Remove(0, 1)}", "Untitled Engine", 
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
@@ -52,22 +72,64 @@ namespace TheAirBlow.Engine.Standalone
                 if (!File.Exists(path + file))
                 {
                     MessageBox.Show("Could not load this project." +
-                        $"\nMissing file: {file.Remove(0, 2)}", "Untitled Engine",
+                        $"\nMissing file: {file.Remove(0, 1)}", "Untitled Engine",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
-            project = JsonConvert.DeserializeObject<ProjectJSON>(path + File.ReadAllText(files[0]));
-            rooms = JsonConvert.DeserializeObject<RoomsJSON>(path + File.ReadAllText(files[3]));
-            sounds = JsonConvert.DeserializeObject<SoundsJSON>(path + File.ReadAllText(files[1]));
-            objects = JsonConvert.DeserializeObject<GameObjectsJSON>(path + File.ReadAllText(files[2]));
+            try
+            {
+                ProjectJSON loadProject = JsonConvert.DeserializeObject<ProjectJSON>(File.ReadAllText(path + files[0]));
+
+                if (loadProject.version != Program.version)
+                {
+                    if (loadProject.intVer < Program.intVer)
+                    {
+                        DialogResult result = MessageBox.Show("This project was created with older version of the Untitled Engine." +
+                        "\nProject's engine version will be changed and you will not be able to load it in old engine version ever again." +
+                        "\n\nDo you want to proceed?",
+                        "Untitled Engine", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result != DialogResult.Yes)
+                        {
+                            path = "";
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, but we can't load this project." +
+                            "\nIt was created in newer engine version and it probably have some changes to projects that this version won't recognize.",
+                            "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        path = "";
+                        return;
+                    }
+                }
+
+                project = JsonConvert.DeserializeObject<ProjectJSON>(File.ReadAllText(path + files[0]));
+                rooms = JsonConvert.DeserializeObject<RoomsJSON>(File.ReadAllText(path + files[3]));
+                sounds = JsonConvert.DeserializeObject<SoundsJSON>(File.ReadAllText(path + files[1]));
+                objects = JsonConvert.DeserializeObject<GameObjectsJSON>(File.ReadAllText(path + files[2]));
+
+                Program.menu.Text = $"Untitled Engine | {project.name}";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error occured while loading this project." +
+                            "\nThis problem can occur when project's engine version is newer than this one." +
+                            "\nHere is some debug info:" +
+                            $"\n{e}",
+                            "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                path = "";
+            }
         }
 
         public static void SaveProject()
         {
             if (path == "") if (!SelectPathDialog()) return;
 
-            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sprites" };
+            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
             string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
                 "\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
 
@@ -77,6 +139,9 @@ namespace TheAirBlow.Engine.Standalone
             File.WriteAllText(path + files[1], JsonConvert.SerializeObject(sounds));
             File.WriteAllText(path + files[2], JsonConvert.SerializeObject(objects));
             File.WriteAllText(path + files[3], JsonConvert.SerializeObject(rooms));
+
+            Program.menu.Text = $"Untitled Engine | {project.name}";
+            dirtyBit = false;
         }
 
         public static void NewProject()
@@ -87,7 +152,7 @@ namespace TheAirBlow.Engine.Standalone
 
             if (!SelectPathDialog()) return;
 
-            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sprites" };
+            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
             string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
                 "\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
 
@@ -98,10 +163,47 @@ namespace TheAirBlow.Engine.Standalone
             objects = new GameObjectsJSON();
             rooms = new RoomsJSON();
 
+            project.name = name;
+
             File.WriteAllText(path + files[0], JsonConvert.SerializeObject(project));
             File.WriteAllText(path + files[1], JsonConvert.SerializeObject(sounds));
             File.WriteAllText(path + files[2], JsonConvert.SerializeObject(objects));
             File.WriteAllText(path + files[3], JsonConvert.SerializeObject(rooms));
+
+            Program.menu.Text = $"Untitled Engine | {project.name}";
+        }
+
+        public static string GetSoundPathByName(string name)
+        {
+            for (int i = 0; i < sounds.sounds.Count; i++)
+            {
+                if (sounds.sounds[i].name == name)
+                    return sounds.sounds[i].path;
+            }
+
+            return null;
+        }
+
+        public static bool HaveSound(string name)
+        {
+            for (int i = 0; i < sounds.sounds.Count; i++)
+            {
+                if (sounds.sounds[i].name == name)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public static int SoundIndex(string name)
+        {
+            for (int i = 0; i < sounds.sounds.Count; i++)
+            {
+                if (sounds.sounds[i].name == name)
+                    return i;
+            }
+
+            return -1;
         }
 
         public static DialogResult InputBox(string title, string promptText, ref string value)
@@ -111,6 +213,8 @@ namespace TheAirBlow.Engine.Standalone
             TextBox textBox = new TextBox();
             Button buttonOk = new Button();
             Button buttonCancel = new Button();
+
+            form.AutoScaleMode = AutoScaleMode.None;
 
             form.Text = title;
             label.Text = promptText;
@@ -122,9 +226,9 @@ namespace TheAirBlow.Engine.Standalone
             buttonCancel.DialogResult = DialogResult.Cancel;
 
             label.SetBounds(9, 20, 372, 13);
-            textBox.SetBounds(12, 36, 372, 20);
-            buttonOk.SetBounds(228, 72, 75, 23);
-            buttonCancel.SetBounds(309, 72, 75, 23);
+            textBox.SetBounds(12, 40, 372, 20);
+            buttonOk.SetBounds(210, 72, 80, 28);
+            buttonCancel.SetBounds(300, 72, 80, 28);
 
             label.AutoSize = true;
             textBox.Anchor = textBox.Anchor | AnchorStyles.Right;

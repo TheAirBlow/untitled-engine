@@ -64,7 +64,7 @@ namespace TheAirBlow.Engine.Standalone
             this.aboutButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1283, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1283, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -74,7 +74,7 @@ namespace TheAirBlow.Engine.Standalone
             this.newProjectButton.Image = ((System.Drawing.Image)(resources.GetObject("newProjectButton.Image")));
             this.newProjectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newProjectButton.Name = "newProjectButton";
-            this.newProjectButton.Size = new System.Drawing.Size(29, 28);
+            this.newProjectButton.Size = new System.Drawing.Size(29, 24);
             this.newProjectButton.Text = "New project";
             this.newProjectButton.Click += new System.EventHandler(this.newProjectButton_Click);
             // 
@@ -84,7 +84,7 @@ namespace TheAirBlow.Engine.Standalone
             this.openProjectButton.Image = ((System.Drawing.Image)(resources.GetObject("openProjectButton.Image")));
             this.openProjectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openProjectButton.Name = "openProjectButton";
-            this.openProjectButton.Size = new System.Drawing.Size(29, 28);
+            this.openProjectButton.Size = new System.Drawing.Size(29, 24);
             this.openProjectButton.Text = "Open project...";
             this.openProjectButton.Click += new System.EventHandler(this.openProjectButton_Click);
             // 
@@ -94,14 +94,14 @@ namespace TheAirBlow.Engine.Standalone
             this.saveProjectButton.Image = ((System.Drawing.Image)(resources.GetObject("saveProjectButton.Image")));
             this.saveProjectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveProjectButton.Name = "saveProjectButton";
-            this.saveProjectButton.Size = new System.Drawing.Size(29, 28);
+            this.saveProjectButton.Size = new System.Drawing.Size(29, 24);
             this.saveProjectButton.Text = "Save project...";
             this.saveProjectButton.Click += new System.EventHandler(this.saveProjectButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // aboutButton
             // 
@@ -109,7 +109,7 @@ namespace TheAirBlow.Engine.Standalone
             this.aboutButton.Image = ((System.Drawing.Image)(resources.GetObject("aboutButton.Image")));
             this.aboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(29, 28);
+            this.aboutButton.Size = new System.Drawing.Size(29, 24);
             this.aboutButton.Text = "About";
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
@@ -198,9 +198,9 @@ namespace TheAirBlow.Engine.Standalone
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 670);
+            this.panel1.Size = new System.Drawing.Size(313, 674);
             this.panel1.TabIndex = 11;
             // 
             // label2
@@ -208,7 +208,7 @@ namespace TheAirBlow.Engine.Standalone
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(0, 633);
+            this.label2.Location = new System.Drawing.Point(0, 637);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(50, 0, 0, 20);
             this.label2.Size = new System.Drawing.Size(252, 37);

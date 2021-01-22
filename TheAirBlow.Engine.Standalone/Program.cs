@@ -11,6 +11,9 @@ namespace TheAirBlow.Engine.Standalone
     {
         [DllImport("user32.dll")]
         public static extern bool SetProcessDPIAware();
+        public static MainMenu menu;
+        public const string version = "1.0.0a";
+        public const int intVer = 1;
 
         [STAThread]
         public static void Main()
@@ -19,7 +22,8 @@ namespace TheAirBlow.Engine.Standalone
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            menu = new MainMenu();
+            Application.Run(menu);
         }
     }
 }

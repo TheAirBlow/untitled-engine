@@ -8,45 +8,46 @@ namespace TheAirBlow.Engine.Standalone
 {
     public class ProjectJSON
     {
-        public string version { get; set; }
-        public string name { get; set; }
+        public int intVer = Program.intVer;
+        public string version = Program.version;
+        public string name = "";
     }
 
     public class GameObjectsJSON
     {
-        public List<GameObject> objects { get; set; }
+        public List<GameObject> objects = new List<GameObject>();
     }
 
     public class SoundsJSON
     {
-        public List<Sound> sounds { get; set; }
+        public List<Sound> sounds = new List<Sound>();
     }
 
     public class Sound
     {
-        public string name { get; set; }
-        public string path { get; set; }
+        public string name = "";
+        public string path = "";
     }
 
     public class RoomsJSON
     {
-        public List<Room> rooms { get; set; }
+        public List<Room> rooms = new List<Room>();
     }
 
     public class Room
     {
-        public List<int> roomObjectsId { get; set; }
-        public int gridSize { get; set; }
-        public int gridWidth { get; set; }
-        public int gridHeight { get; set; }
+        public List<int> roomObjectsId = new List<int>();
+        public int gridSize = 32;
+        public int gridWidth = 8;
+        public int gridHeight = 8;
     }
 
     public class GameObject
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string sprite { get; set; }
+        public int id = -1;
+        public string name = "";
+        public string sprite = "";
 
-        // TODO: Events
+        // TODO: Events and blocks
     }
 }
