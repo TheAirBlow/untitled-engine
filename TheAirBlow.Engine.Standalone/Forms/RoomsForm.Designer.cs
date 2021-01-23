@@ -41,17 +41,12 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.roomName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -60,8 +55,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cellWidth)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -111,13 +104,30 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.cellSize.Name = "cellSize";
             this.cellSize.Size = new System.Drawing.Size(65, 22);
             this.cellSize.TabIndex = 11;
+            this.cellSize.Value = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            this.cellSize.ValueChanged += new System.EventHandler(this.cellSize_ValueChanged);
             // 
             // cellHeight
             // 
             this.cellHeight.Location = new System.Drawing.Point(60, 96);
+            this.cellHeight.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.cellHeight.Name = "cellHeight";
             this.cellHeight.Size = new System.Drawing.Size(65, 22);
             this.cellHeight.TabIndex = 10;
+            this.cellHeight.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.cellHeight.ValueChanged += new System.EventHandler(this.cellHeight_ValueChanged);
             // 
             // label4
             // 
@@ -131,9 +141,20 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // cellWidth
             // 
             this.cellWidth.Location = new System.Drawing.Point(60, 67);
+            this.cellWidth.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.cellWidth.Name = "cellWidth";
             this.cellWidth.Size = new System.Drawing.Size(65, 22);
             this.cellWidth.TabIndex = 8;
+            this.cellWidth.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.cellWidth.ValueChanged += new System.EventHandler(this.cellWidth_ValueChanged);
             // 
             // label3
             // 
@@ -168,13 +189,12 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.roomName.Name = "roomName";
             this.roomName.Size = new System.Drawing.Size(172, 22);
             this.roomName.TabIndex = 3;
+            this.roomName.Text = "<none>";
+            this.roomName.TextChanged += new System.EventHandler(this.roomName_TextChanged);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.radioButton2);
-            this.tabPage2.Controls.Add(this.radioButton1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -183,45 +203,15 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage2.Text = "Background";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(76, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 27);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Set sprite...";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(76, 6);
+            this.button3.Location = new System.Drawing.Point(6, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 27);
             this.button3.TabIndex = 2;
             this.button3.Text = "Set color...";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(66, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sprite";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 9);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Color";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -231,6 +221,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.button2.TabIndex = 2;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -240,15 +231,12 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.button1.TabIndex = 1;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "Placeholder1",
-            "Placeholder2",
-            "Placeholder3"});
             this.listBox1.Location = new System.Drawing.Point(9, 21);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(247, 196);
@@ -270,49 +258,16 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
             this.listBox2.Items.AddRange(new object[] {
-            "<empty>",
-            "Placeholder1",
-            "Placeholder2",
-            "Placeholder3"});
+            "<empty>"});
             this.listBox2.Location = new System.Drawing.Point(5, 21);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(247, 116);
             this.listBox2.TabIndex = 5;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(272, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(808, 614);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Room Editor";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 60;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 593);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // RoomsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1092, 628);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -327,10 +282,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cellHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellWidth)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,13 +304,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox roomName;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button3;
     }
 }

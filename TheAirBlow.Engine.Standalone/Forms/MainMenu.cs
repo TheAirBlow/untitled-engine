@@ -18,6 +18,8 @@ namespace TheAirBlow.Engine.Standalone
             InitializeComponent();
         }
 
+        public static bool scrolling = false;
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (ProjectSaving.dirtyBit)
@@ -30,7 +32,7 @@ namespace TheAirBlow.Engine.Standalone
                 {
                     ProjectSaving.SaveProject();
                 }
-                else e.Cancel = true;
+                else if (result == DialogResult.Cancel) e.Cancel = true;
             }
         }
 
@@ -109,6 +111,11 @@ namespace TheAirBlow.Engine.Standalone
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

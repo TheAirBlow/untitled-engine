@@ -218,13 +218,14 @@ namespace TheAirBlow.Engine.Standalone
             // MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1283, 701);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
             this.Name = "MainMenu";
             this.Text = "Untitled Engine";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

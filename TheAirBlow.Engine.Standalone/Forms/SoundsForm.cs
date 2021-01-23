@@ -68,8 +68,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
         {
             if (soundSelect.SelectedIndex != -1)
             {
-                soundSelect.Items.RemoveAt(soundSelect.SelectedIndex);
                 int index = ProjectSaving.SoundIndex((string)soundSelect.SelectedItem);
+                soundSelect.Items.RemoveAt(soundSelect.SelectedIndex);
                 if (index != -1) ProjectSaving.sounds.sounds.RemoveAt(index);
             }
         }

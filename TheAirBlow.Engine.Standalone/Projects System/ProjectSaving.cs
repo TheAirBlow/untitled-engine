@@ -50,7 +50,7 @@ namespace TheAirBlow.Engine.Standalone
 
         public static void LoadProject()
         {
-            if (path == "") if (!SelectPathDialog()) return;
+            if (!SelectPathDialog()) return;
 
             string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
             string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
@@ -127,7 +127,11 @@ namespace TheAirBlow.Engine.Standalone
 
         public static void SaveProject()
         {
-            if (path == "") if (!SelectPathDialog()) return;
+            if (path == "")
+            {
+                MessageBox.Show("No project is loaded or created yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
             string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
@@ -184,6 +188,17 @@ namespace TheAirBlow.Engine.Standalone
             return null;
         }
 
+        public static Room GetRoomByName(string name)
+        {
+            for (int i = 0; i < rooms.rooms.Count; i++)
+            {
+                if (rooms.rooms[i].name == name)
+                    return rooms.rooms[i];
+            }
+
+            return null;
+        }
+
         public static bool HaveSound(string name)
         {
             for (int i = 0; i < sounds.sounds.Count; i++)
@@ -195,11 +210,33 @@ namespace TheAirBlow.Engine.Standalone
             return false;
         }
 
+        public static bool HaveRoom(string name)
+        {
+            for (int i = 0; i < rooms.rooms.Count; i++)
+            {
+                if (rooms.rooms[i].name == name)
+                    return true;
+            }
+
+            return false;
+        }
+
         public static int SoundIndex(string name)
         {
             for (int i = 0; i < sounds.sounds.Count; i++)
             {
                 if (sounds.sounds[i].name == name)
+                    return i;
+            }
+
+            return -1;
+        }
+
+        public static int RoomIndex(string name)
+        {
+            for (int i = 0; i < rooms.rooms.Count; i++)
+            {
+                if (rooms.rooms[i].name == name)
                     return i;
             }
 
