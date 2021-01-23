@@ -29,6 +29,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoundsForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -165,9 +166,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.ClientSize = new System.Drawing.Size(330, 384);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SoundsForm";
-            this.Text = "Untitled Engine | Sounds";
+            this.Text = "Sounds";
             this.Load += new System.EventHandler(this.SoundsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

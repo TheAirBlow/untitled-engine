@@ -35,7 +35,7 @@ namespace TheAirBlow.Engine.Standalone
             this.newProjectButton = new System.Windows.Forms.ToolStripButton();
             this.openProjectButton = new System.Windows.Forms.ToolStripButton();
             this.saveProjectButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutButton = new System.Windows.Forms.ToolStripButton();
             this.objectsButton = new System.Windows.Forms.Button();
             this.roomsButton = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@ namespace TheAirBlow.Engine.Standalone
             this.newProjectButton,
             this.openProjectButton,
             this.saveProjectButton,
-            this.toolStripSeparator1,
+            this.toolStripSeparator2,
             this.aboutButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -98,10 +98,10 @@ namespace TheAirBlow.Engine.Standalone
             this.saveProjectButton.Text = "Save project...";
             this.saveProjectButton.Click += new System.EventHandler(this.saveProjectButton_Click);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator2
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // aboutButton
             // 
@@ -221,6 +221,7 @@ namespace TheAirBlow.Engine.Standalone
             this.ClientSize = new System.Drawing.Size(1283, 701);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainMenu";
             this.Text = "Untitled Engine";
@@ -243,7 +244,6 @@ namespace TheAirBlow.Engine.Standalone
         private System.Windows.Forms.ToolStripButton newProjectButton;
         private System.Windows.Forms.ToolStripButton openProjectButton;
         private System.Windows.Forms.ToolStripButton saveProjectButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton aboutButton;
         private System.Windows.Forms.Button objectsButton;
         private System.Windows.Forms.Button roomsButton;
@@ -255,6 +255,7 @@ namespace TheAirBlow.Engine.Standalone
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

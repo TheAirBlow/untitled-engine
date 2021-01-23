@@ -125,6 +125,76 @@ namespace TheAirBlow.Engine.Standalone
             }
         }
 
+        public static void LoadProject(string path)
+        {
+            string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
+            string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
+                "\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
+
+            foreach (string dir in dirs)
+            {
+                if (!Directory.Exists(path + dir))
+                {
+                    MessageBox.Show("Could not load this project." +
+                        $"\nMissing directory: {dir.Remove(0, 1)}", "Untitled Engine",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0);
+                }
+            }
+
+            foreach (string file in files)
+            {
+                if (!File.Exists(path + file))
+                {
+                    MessageBox.Show("Could not load this project." +
+                        $"\nMissing file: {file.Remove(0, 1)}", "Untitled Engine",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0);
+                }
+            }
+
+            try
+            {
+                ProjectJSON loadProject = JsonConvert.DeserializeObject<ProjectJSON>(File.ReadAllText(path + files[0]));
+
+                if (loadProject.version != Program.version)
+                {
+                    if (loadProject.intVer < Program.intVer)
+                    {
+                        DialogResult result = MessageBox.Show("This project was created with older version of the Untitled Engine." +
+                        "\nProject's engine version will be changed and you will not be able to load it in old engine version ever again." +
+                        "\n\nDo you want to proceed?",
+                        "Untitled Engine", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result != DialogResult.Yes) Environment.Exit(0);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, but we can't load this project." +
+                            "\nIt was created in newer engine version and it probably have some changes to projects that this version won't recognize.",
+                            "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Environment.Exit(0);
+                    }
+                }
+
+                project = JsonConvert.DeserializeObject<ProjectJSON>(File.ReadAllText(path + files[0]));
+                rooms = JsonConvert.DeserializeObject<RoomsJSON>(File.ReadAllText(path + files[3]));
+                sounds = JsonConvert.DeserializeObject<SoundsJSON>(File.ReadAllText(path + files[1]));
+                objects = JsonConvert.DeserializeObject<GameObjectsJSON>(File.ReadAllText(path + files[2]));
+
+                Program.menu.Text = $"Untitled Engine | {project.name}";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error occured while loading this project." +
+                            "\nThis problem can occur when project's engine version is newer than this one." +
+                            "\nHere is some debug info:" +
+                            $"\n{e}",
+                            "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+        }
+
         public static void SaveProject()
         {
             if (path == "")

@@ -29,6 +29,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomsForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -47,6 +48,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -55,6 +57,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cellWidth)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +66,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(262, 458);
             this.groupBox1.TabIndex = 0;
@@ -246,7 +249,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Location = new System.Drawing.Point(3, 466);
+            this.groupBox2.Location = new System.Drawing.Point(3, 467);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(262, 150);
             this.groupBox2.TabIndex = 1;
@@ -264,15 +267,25 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.listBox2.Size = new System.Drawing.Size(247, 116);
             this.listBox2.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(269, 628);
+            this.panel1.TabIndex = 2;
+            // 
             // RoomsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1092, 628);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RoomsForm";
-            this.Text = "Untitled Engine | Rooms";
+            this.Text = "Rooms";
             this.Load += new System.EventHandler(this.RoomsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -283,6 +296,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cellWidth)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -307,5 +321,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

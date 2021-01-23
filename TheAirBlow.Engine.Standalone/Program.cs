@@ -16,10 +16,15 @@ namespace TheAirBlow.Engine.Standalone
         public const int intVer = 1;
 
         [STAThread]
-        public static void Main()
+        public static void Main(string[] args)
         {
-            SetProcessDPIAware();
+            string path = "";
+            foreach (string str in args) path += str;
 
+            if (path != "")
+                ProjectSaving.LoadProject(path);
+
+            SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             menu = new MainMenu();

@@ -50,6 +50,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Placeholder1");
             System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Placeholder2");
             System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Placeholder3");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObjectsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.spriteIcon = new System.Windows.Forms.PictureBox();
@@ -134,10 +135,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.spriteIcon);
-            this.panel1.Location = new System.Drawing.Point(64, 294);
+            this.panel1.Location = new System.Drawing.Point(64, 292);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(88, 87);
+            this.panel1.Size = new System.Drawing.Size(89, 90);
             this.panel1.TabIndex = 10;
             // 
             // spriteIcon
@@ -638,9 +640,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.ClientSize = new System.Drawing.Size(875, 509);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ObjectsForm";
-            this.Text = "Untitled Engine | Objects";
+            this.Text = "Objects";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);

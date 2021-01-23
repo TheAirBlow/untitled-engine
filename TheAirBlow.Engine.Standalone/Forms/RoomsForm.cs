@@ -24,7 +24,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private Room room = new Room();
         private Color bg = Color.White;
 
-        private void RoomsForm_Load(object sender, EventArgs e)
+        private async void RoomsForm_Load(object sender, EventArgs e)
         {
             g = CreateGraphics();
 
@@ -35,6 +35,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
             {
                 listBox1.Items.Add(ProjectSaving.rooms.rooms[i].name);
             }
+
+            await Task.Delay(50);
+
+            UpdateRoomView();
         }
 
         private void RoomsForm_MouseDownEvent(object sender, MouseEventArgs e)
