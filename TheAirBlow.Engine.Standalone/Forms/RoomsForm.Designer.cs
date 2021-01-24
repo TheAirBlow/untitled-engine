@@ -106,6 +106,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.cellSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.cellSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellSize.ForeColor = System.Drawing.Color.White;
             this.cellSize.Location = new System.Drawing.Point(78, 34);
             this.cellSize.Name = "cellSize";
             this.cellSize.Size = new System.Drawing.Size(65, 22);
@@ -121,6 +122,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.cellHeight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.cellHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellHeight.ForeColor = System.Drawing.Color.White;
             this.cellHeight.Location = new System.Drawing.Point(60, 96);
             this.cellHeight.Maximum = new decimal(new int[] {
             10000,
@@ -150,6 +152,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.cellWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.cellWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cellWidth.ForeColor = System.Drawing.Color.White;
             this.cellWidth.Location = new System.Drawing.Point(60, 67);
             this.cellWidth.Maximum = new decimal(new int[] {
             10000,
@@ -197,6 +200,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.roomName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.roomName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.roomName.ForeColor = System.Drawing.Color.White;
             this.roomName.Location = new System.Drawing.Point(61, 6);
             this.roomName.Name = "roomName";
             this.roomName.Size = new System.Drawing.Size(172, 22);
@@ -206,6 +210,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -213,7 +218,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage2.Size = new System.Drawing.Size(239, 129);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Background";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
