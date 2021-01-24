@@ -252,7 +252,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -264,6 +264,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.groupBox5.Controls.Add(this.listView2);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(4, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(379, 430);
@@ -275,6 +276,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView2.ForeColor = System.Drawing.Color.White;
             this.listView2.HideSelection = false;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
@@ -289,17 +291,19 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage5
             // 
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage5.Controls.Add(this.groupBox6);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(386, 436);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Destroy";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.groupBox6.Controls.Add(this.destroyBlocks);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
             this.groupBox6.Location = new System.Drawing.Point(4, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(379, 430);
@@ -309,6 +313,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // destroyBlocks
             // 
+            this.destroyBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.destroyBlocks.ForeColor = System.Drawing.Color.White;
             this.destroyBlocks.HideSelection = false;
             this.destroyBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem4,
@@ -323,17 +329,19 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage6
             // 
+            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage6.Controls.Add(this.groupBox7);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(386, 436);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Step";
-            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.groupBox7.Controls.Add(this.stepBlocks);
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(4, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(379, 430);
@@ -343,6 +351,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // stepBlocks
             // 
+            this.stepBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.stepBlocks.ForeColor = System.Drawing.Color.White;
             this.stepBlocks.HideSelection = false;
             this.stepBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem7,
@@ -357,17 +367,19 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage7
             // 
+            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage7.Controls.Add(this.groupBox8);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(386, 436);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Alarm";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
+            this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.groupBox8.Controls.Add(this.alarmBlocks);
+            this.groupBox8.ForeColor = System.Drawing.Color.White;
             this.groupBox8.Location = new System.Drawing.Point(4, 3);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(379, 430);
@@ -377,6 +389,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // alarmBlocks
             // 
+            this.alarmBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.alarmBlocks.ForeColor = System.Drawing.Color.White;
             this.alarmBlocks.HideSelection = false;
             this.alarmBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem10,
@@ -392,6 +406,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage8
             // 
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage8.Controls.Add(this.groupBox4);
             this.tabPage8.Controls.Add(this.groupBox1);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
@@ -399,11 +414,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage8.Size = new System.Drawing.Size(386, 436);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Collision";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.collisionBlocks);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(4, 224);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(379, 209);
@@ -413,6 +428,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // collisionBlocks
             // 
+            this.collisionBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.collisionBlocks.ForeColor = System.Drawing.Color.White;
             this.collisionBlocks.HideSelection = false;
             this.collisionBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem13,
@@ -428,6 +445,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.colliderSelect);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(380, 214);
@@ -437,6 +455,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // colliderSelect
             // 
+            this.colliderSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.colliderSelect.ForeColor = System.Drawing.Color.White;
             this.colliderSelect.FormattingEnabled = true;
             this.colliderSelect.ItemHeight = 16;
             this.colliderSelect.Items.AddRange(new object[] {
@@ -450,6 +470,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage9
             // 
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage9.Controls.Add(this.groupBox9);
             this.tabPage9.Controls.Add(this.groupBox10);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
@@ -457,11 +478,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage9.Size = new System.Drawing.Size(386, 436);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Mouse";
-            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.mouseAction);
+            this.groupBox9.ForeColor = System.Drawing.Color.White;
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(380, 214);
@@ -471,6 +492,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // mouseAction
             // 
+            this.mouseAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.mouseAction.ForeColor = System.Drawing.Color.White;
             this.mouseAction.FormattingEnabled = true;
             this.mouseAction.ItemHeight = 16;
             this.mouseAction.Items.AddRange(new object[] {
@@ -487,6 +510,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.mouseBlocks);
+            this.groupBox10.ForeColor = System.Drawing.Color.White;
             this.groupBox10.Location = new System.Drawing.Point(4, 224);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(379, 209);
@@ -496,6 +520,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // mouseBlocks
             // 
+            this.mouseBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.mouseBlocks.ForeColor = System.Drawing.Color.White;
             this.mouseBlocks.HideSelection = false;
             this.mouseBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem16,
@@ -510,6 +536,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage10
             // 
+            this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage10.Controls.Add(this.groupBox11);
             this.tabPage10.Controls.Add(this.groupBox12);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
@@ -517,11 +544,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage10.Size = new System.Drawing.Size(386, 436);
             this.tabPage10.TabIndex = 6;
             this.tabPage10.Text = "Keyboard";
-            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.keySelect);
+            this.groupBox11.ForeColor = System.Drawing.Color.White;
             this.groupBox11.Location = new System.Drawing.Point(3, 3);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(380, 214);
@@ -531,6 +558,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // keySelect
             // 
+            this.keySelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.keySelect.ForeColor = System.Drawing.Color.White;
             this.keySelect.FormattingEnabled = true;
             this.keySelect.ItemHeight = 16;
             this.keySelect.Items.AddRange(new object[] {
@@ -598,6 +627,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.keyboardBlocks);
+            this.groupBox12.ForeColor = System.Drawing.Color.White;
             this.groupBox12.Location = new System.Drawing.Point(4, 224);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(379, 209);
@@ -607,6 +637,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // keyboardBlocks
             // 
+            this.keyboardBlocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.keyboardBlocks.ForeColor = System.Drawing.Color.White;
             this.keyboardBlocks.HideSelection = false;
             this.keyboardBlocks.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem19,
