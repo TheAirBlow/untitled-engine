@@ -23,6 +23,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private int roomEditorY = 12;
         private Room room = new Room();
         private Color bg = Color.White;
+        private GameObject currentObject;
 
         private async void RoomsForm_Load(object sender, EventArgs e)
         {
@@ -35,6 +36,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             for (int i = 0; i < ProjectSaving.rooms.rooms.Count; i++)
             {
                 listBox1.Items.Add(ProjectSaving.rooms.rooms[i].name);
+            }
+
+            for (int i = 0; i < ProjectSaving.objects.objects.Count; i++)
+            {
+                listBox2.Items.Add(ProjectSaving.objects.objects[i].name);
             }
 
             await Task.Delay(50);
@@ -59,14 +65,33 @@ namespace TheAirBlow.Engine.Standalone.Forms
                     if (e.X > mouseXmin && e.X < mouseXmax
                         && e.Y > mouseYmin && e.Y < mouseYmax)
                     {
-                        MessageBox.Show($"Clicked at {forX + 1} / {forY + 1}" +
-                            $"\nObjects are currently in development so now you only can get position");
                         for (int i = 0; i < room.roomObjects.Count; i++)
                         {
                             if (room.roomObjects[i].x != forX) continue;
                             if (room.roomObjects[i].y != forY) continue;
                             room.roomObjects.RemoveAt(i);
                         }
+
+                        if (e.Button != MouseButtons.Left)
+                        {
+                            UpdateRoomView();
+                            return;
+                        }
+
+                        if (currentObject == null)
+                        {
+                            MessageBox.Show($"Object is not selected yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        RoomObject obj = new RoomObject();
+                        obj.x = forX;
+                        obj.y = forY;
+                        obj.name = currentObject.name;
+
+                        room.roomObjects.Add(obj);
+
+                        UpdateRoomView();
                     }
                 }
             }
@@ -150,7 +175,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             g.DrawLine(new Pen(color, width), roomEditorX + x1, roomEditorY + y1, roomEditorX + x2, roomEditorY + y2);
         }
 
-        private void DrawGrid(Color color, int x, int y, int size, int width, int height, int penWidth)
+        private async void DrawGrid(Color color, int x, int y, int size, int width, int height, int penWidth)
         {
             int originalWidth = 1110;
             int originalHeight = 675;
@@ -160,6 +185,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             if (originalWidth < (totalWidth + roomEditorX + 50)) Size = new Size(totalWidth + roomEditorX + 50, Size.Height);
             else if (originalHeight < (totalHeight + roomEditorY + 50)) Size = new Size(Size.Width, totalHeight + roomEditorY + 50);
             else Size = new Size(originalWidth, originalHeight);
+
+            await Task.Delay(10);
 
             g = CreateGraphics();
 
@@ -187,7 +214,9 @@ namespace TheAirBlow.Engine.Standalone.Forms
                         if (room.roomObjects[i].y != forY) continue;
                         int posX = (size * forX) + penWidth;
                         int posY = (size * forY) + penWidth;
-                        g.DrawIcon(SystemIcons.Error, roomEditorX + posX, roomEditorY + posY);
+                        if (ProjectSaving.GetObjectByName(room.roomObjects[i].name) == null) return;
+                        g.DrawImage(Image.FromFile(ProjectSaving.path + "\\Assets\\Sprites\\" 
+                            + ProjectSaving.GetObjectByName(room.roomObjects[i].name).sprite), roomEditorX + posX, roomEditorY + posY);
                     }
                 }
             }
@@ -216,6 +245,12 @@ namespace TheAirBlow.Engine.Standalone.Forms
             if (ProjectSaving.HaveRoom(roomName.Text)) return;
             
             room.name = roomName.Text;
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = ProjectSaving.ObjectIndex((string)listBox2.SelectedItem);
+            if (index != -1) currentObject = ProjectSaving.objects.objects[index];
         }
     }
 }

@@ -260,7 +260,7 @@ namespace TheAirBlow.Engine.Standalone
 
         public static GameObject GetObjectByName(string name)
         {
-            for (int i = 0; i < sounds.sounds.Count; i++)
+            for (int i = 0; i < objects.objects.Count; i++)
             {
                 if (objects.objects[i].name == name)
                     return objects.objects[i];

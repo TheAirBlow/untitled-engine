@@ -293,6 +293,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(247, 116);
             this.listBox2.TabIndex = 5;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // panel1
             // 
