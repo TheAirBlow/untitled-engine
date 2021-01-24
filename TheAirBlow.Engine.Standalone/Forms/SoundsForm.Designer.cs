@@ -87,6 +87,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(67, 199);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(248, 22);
@@ -129,6 +130,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.soundSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.soundSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.soundSelect.ForeColor = System.Drawing.Color.White;
             this.soundSelect.FormattingEnabled = true;
             this.soundSelect.ItemHeight = 16;
             this.soundSelect.Location = new System.Drawing.Point(7, 22);

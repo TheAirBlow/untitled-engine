@@ -58,9 +58,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
                 }
                 Sound sound = new Sound();
                 sound.name = name;
-                sound.path = ProjectSaving.path + "\\Assets\\Sounds\\" + Path.GetFileName(path);
+                sound.path = Path.GetFileName(path);
                 ProjectSaving.sounds.sounds.Add(sound);
                 soundSelect.Items.Add(name);
+                selectedSoundPath = ProjectSaving.path + "\\Assets\\Sounds\\" + Path.GetFileName(path);
             }
         }
 
@@ -91,7 +92,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
                 int index = ProjectSaving.SoundIndex(name);
                 if (index != 1)
                 {
-                    ProjectSaving.sounds.sounds[index].path = ProjectSaving.path + "\\Assets\\Sounds\\" + Path.GetFileName(path);
+                    ProjectSaving.sounds.sounds[index].path = Path.GetFileName(path);
                     selectedSoundPath = ProjectSaving.path + "\\Assets\\Sounds\\" + Path.GetFileName(path);
                 }
             }
@@ -117,7 +118,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             string path = ProjectSaving.GetSoundPathByName(name);
             if (path != null)
             {
-                selectedSoundPath = path;
+                selectedSoundPath = ProjectSaving.path + "\\Assets\\Sounds\\" + path;
                 textBox1.Text = name;
             }
         }

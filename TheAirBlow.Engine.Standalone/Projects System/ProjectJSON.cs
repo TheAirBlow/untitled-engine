@@ -54,10 +54,8 @@ namespace TheAirBlow.Engine.Standalone
 
     public class GameObject
     {
-        public int id = -1;
         public string name = "";
         public string sprite = "";
-
-        // TODO: Events and blocks
+        public string code = @"";
     }
 }

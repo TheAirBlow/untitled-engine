@@ -21,5 +21,30 @@ namespace TheAirBlow.Engine.Standalone.Forms
         {
 
         }
+
+        private void AboutForm_Load(object sender, EventArgs e)
+        {
+            pictureBox2.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
+            pictureBox2.MouseMove += new MouseEventHandler(pictureBox1_MouseMove);
+        }
+
+        private Point MouseDownLocation;
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                MouseDownLocation = e.Location;
+            }
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                pictureBox2.Left = e.X + pictureBox2.Left - MouseDownLocation.X;
+                pictureBox2.Top = e.Y + pictureBox2.Top - MouseDownLocation.Y;
+            }
+        }
     }
 }

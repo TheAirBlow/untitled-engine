@@ -258,6 +258,17 @@ namespace TheAirBlow.Engine.Standalone
             return null;
         }
 
+        public static GameObject GetObjectByName(string name)
+        {
+            for (int i = 0; i < sounds.sounds.Count; i++)
+            {
+                if (objects.objects[i].name == name)
+                    return objects.objects[i];
+            }
+
+            return null;
+        }
+
         public static Room GetRoomByName(string name)
         {
             for (int i = 0; i < rooms.rooms.Count; i++)
@@ -291,6 +302,17 @@ namespace TheAirBlow.Engine.Standalone
             return false;
         }
 
+        public static bool HaveObject(string name)
+        {
+            for (int i = 0; i < objects.objects.Count; i++)
+            {
+                if (objects.objects[i].name == name)
+                    return true;
+            }
+
+            return false;
+        }
+
         public static int SoundIndex(string name)
         {
             for (int i = 0; i < sounds.sounds.Count; i++)
@@ -307,6 +329,17 @@ namespace TheAirBlow.Engine.Standalone
             for (int i = 0; i < rooms.rooms.Count; i++)
             {
                 if (rooms.rooms[i].name == name)
+                    return i;
+            }
+
+            return -1;
+        }
+
+        public static int ObjectIndex(string name)
+        {
+            for (int i = 0; i < objects.objects.Count; i++)
+            {
+                if (objects.objects[i].name == name)
                     return i;
             }
 
