@@ -54,6 +54,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.soundSelect);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(321, 272);
@@ -65,6 +66,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(53, 232);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(84, 29);
@@ -76,6 +78,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(9, 238);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 17);
@@ -96,6 +99,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
@@ -106,6 +110,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(221, 160);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 32);
@@ -118,6 +123,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(7, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 32);
@@ -144,6 +150,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(3, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(315, 36);
@@ -157,6 +164,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(3, 57);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(315, 36);
@@ -169,6 +177,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 282);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(321, 96);
