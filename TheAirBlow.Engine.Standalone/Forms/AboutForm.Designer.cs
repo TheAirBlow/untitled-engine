@@ -61,6 +61,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(598, 243);
@@ -80,6 +81,9 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(7, 152);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -120,6 +124,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(13, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(605, 172);
@@ -129,10 +134,13 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
@@ -163,10 +171,13 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // AboutForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(627, 442);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.Text = "Untitled Engine";
             this.groupBox1.ResumeLayout(false);

@@ -63,12 +63,14 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(53, 232);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(84, 29);
             this.button5.TabIndex = 6;
             this.button5.Text = "Select...";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label2
@@ -83,6 +85,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(67, 199);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(248, 22);
@@ -99,54 +103,64 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(221, 160);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 32);
             this.button2.TabIndex = 2;
             this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(7, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // soundSelect
             // 
+            this.soundSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.soundSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.soundSelect.FormattingEnabled = true;
             this.soundSelect.ItemHeight = 16;
             this.soundSelect.Location = new System.Drawing.Point(7, 22);
             this.soundSelect.Name = "soundSelect";
-            this.soundSelect.Size = new System.Drawing.Size(308, 132);
+            this.soundSelect.Size = new System.Drawing.Size(308, 130);
             this.soundSelect.TabIndex = 0;
             this.soundSelect.SelectedIndexChanged += new System.EventHandler(this.soundSelect_SelectedIndexChanged);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(3, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(315, 36);
             this.button3.TabIndex = 1;
             this.button3.Text = "Play";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(3, 57);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(315, 36);
             this.button4.TabIndex = 2;
             this.button4.Text = "Stop";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox2
@@ -163,9 +177,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // SoundsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(330, 384);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SoundsForm";

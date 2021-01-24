@@ -66,6 +66,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(262, 458);
@@ -85,6 +86,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.tabPage1.Controls.Add(this.cellSize);
             this.tabPage1.Controls.Add(this.cellHeight);
             this.tabPage1.Controls.Add(this.label4);
@@ -99,10 +101,11 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.tabPage1.Size = new System.Drawing.Size(239, 129);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // cellSize
             // 
+            this.cellSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.cellSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cellSize.Location = new System.Drawing.Point(78, 34);
             this.cellSize.Name = "cellSize";
             this.cellSize.Size = new System.Drawing.Size(65, 22);
@@ -116,6 +119,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // cellHeight
             // 
+            this.cellHeight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.cellHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cellHeight.Location = new System.Drawing.Point(60, 96);
             this.cellHeight.Maximum = new decimal(new int[] {
             10000,
@@ -143,6 +148,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // cellWidth
             // 
+            this.cellWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.cellWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cellWidth.Location = new System.Drawing.Point(60, 67);
             this.cellWidth.Maximum = new decimal(new int[] {
             10000,
@@ -188,6 +195,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // roomName
             // 
+            this.roomName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.roomName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roomName.Location = new System.Drawing.Point(61, 6);
             this.roomName.Name = "roomName";
             this.roomName.Size = new System.Drawing.Size(172, 22);
@@ -208,36 +217,47 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(6, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 27);
             this.button3.TabIndex = 2;
             this.button3.Text = "Set color...";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(175, 223);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 2;
             this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(9, 223);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 33);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(9, 21);
@@ -249,6 +269,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox2);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 467);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(262, 150);
@@ -258,6 +279,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // listBox2
             // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.listBox2.ForeColor = System.Drawing.Color.White;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
             this.listBox2.Items.AddRange(new object[] {
@@ -280,8 +303,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // RoomsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(1092, 628);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RoomsForm";

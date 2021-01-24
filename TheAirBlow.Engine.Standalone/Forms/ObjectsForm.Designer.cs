@@ -91,7 +91,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.keyboardBlocks = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spriteIcon)).BeginInit();
@@ -126,6 +125,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.objectSelect);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(247, 504);
@@ -153,6 +153,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // nameBox
             // 
+            this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Location = new System.Drawing.Point(64, 262);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(100, 22);
@@ -162,6 +164,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(9, 292);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 17);
@@ -171,6 +174,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
@@ -179,26 +183,35 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(153, 207);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 34);
             this.button2.TabIndex = 5;
             this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(9, 207);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 34);
             this.button1.TabIndex = 4;
             this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // objectSelect
             // 
+            this.objectSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.objectSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.objectSelect.ForeColor = System.Drawing.Color.White;
             this.objectSelect.FormattingEnabled = true;
             this.objectSelect.ItemHeight = 16;
             this.objectSelect.Items.AddRange(new object[] {
@@ -207,13 +220,14 @@ namespace TheAirBlow.Engine.Standalone.Forms
             "Placeholder3"});
             this.objectSelect.Location = new System.Drawing.Point(6, 21);
             this.objectSelect.Name = "objectSelect";
-            this.objectSelect.Size = new System.Drawing.Size(235, 180);
+            this.objectSelect.Size = new System.Drawing.Size(235, 178);
             this.objectSelect.TabIndex = 3;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tabControl2);
             this.groupBox3.Controls.Add(this.tabControl1);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(256, 1);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(613, 504);
@@ -238,16 +252,17 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(386, 436);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Creation";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.groupBox5.Controls.Add(this.listView2);
             this.groupBox5.Location = new System.Drawing.Point(4, 3);
             this.groupBox5.Name = "groupBox5";
@@ -258,6 +273,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // listView2
             // 
+            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView2.HideSelection = false;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
@@ -604,9 +621,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabControl1
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Right;
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(407, 11);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -616,30 +631,22 @@ namespace TheAirBlow.Engine.Standalone.Forms
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(171, 467);
+            this.tabPage1.Size = new System.Drawing.Size(192, 446);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(171, 467);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage1.Text = "Global";
             // 
             // ObjectsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(875, 509);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ObjectsForm";
@@ -685,7 +692,6 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;

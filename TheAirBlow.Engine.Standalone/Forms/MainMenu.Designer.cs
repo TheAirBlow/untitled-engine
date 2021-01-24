@@ -42,19 +42,20 @@ namespace TheAirBlow.Engine.Standalone
             this.soundsButton = new System.Windows.Forms.Button();
             this.runButton = new System.Windows.Forms.Button();
             this.compileButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newProjectButton,
@@ -115,76 +116,68 @@ namespace TheAirBlow.Engine.Standalone
             // 
             // objectsButton
             // 
+            this.objectsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.objectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.objectsButton.ForeColor = System.Drawing.Color.Black;
             this.objectsButton.Location = new System.Drawing.Point(6, 21);
             this.objectsButton.Name = "objectsButton";
             this.objectsButton.Size = new System.Drawing.Size(93, 33);
             this.objectsButton.TabIndex = 1;
             this.objectsButton.Text = "Objects...";
-            this.objectsButton.UseVisualStyleBackColor = true;
+            this.objectsButton.UseVisualStyleBackColor = false;
             this.objectsButton.Click += new System.EventHandler(this.objectsButton_Click);
             // 
             // roomsButton
             // 
+            this.roomsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.roomsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roomsButton.ForeColor = System.Drawing.Color.Black;
             this.roomsButton.Location = new System.Drawing.Point(105, 21);
             this.roomsButton.Name = "roomsButton";
             this.roomsButton.Size = new System.Drawing.Size(93, 33);
             this.roomsButton.TabIndex = 2;
             this.roomsButton.Text = "Rooms...";
-            this.roomsButton.UseVisualStyleBackColor = true;
+            this.roomsButton.UseVisualStyleBackColor = false;
             this.roomsButton.Click += new System.EventHandler(this.roomsButton_Click);
             // 
             // soundsButton
             // 
+            this.soundsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.soundsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.soundsButton.ForeColor = System.Drawing.Color.Black;
             this.soundsButton.Location = new System.Drawing.Point(204, 21);
             this.soundsButton.Name = "soundsButton";
             this.soundsButton.Size = new System.Drawing.Size(93, 33);
             this.soundsButton.TabIndex = 3;
             this.soundsButton.Text = "Sounds...";
-            this.soundsButton.UseVisualStyleBackColor = true;
+            this.soundsButton.UseVisualStyleBackColor = false;
             this.soundsButton.Click += new System.EventHandler(this.soundsButton_Click);
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(103, 21);
+            this.runButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.runButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.runButton.ForeColor = System.Drawing.Color.Black;
+            this.runButton.Location = new System.Drawing.Point(106, 21);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(76, 33);
             this.runButton.TabIndex = 4;
             this.runButton.Text = "Run...";
-            this.runButton.UseVisualStyleBackColor = true;
+            this.runButton.UseVisualStyleBackColor = false;
             this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
             // compileButton
             // 
-            this.compileButton.Location = new System.Drawing.Point(6, 21);
+            this.compileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.compileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.compileButton.ForeColor = System.Drawing.Color.Black;
+            this.compileButton.Location = new System.Drawing.Point(9, 21);
             this.compileButton.Name = "compileButton";
             this.compileButton.Size = new System.Drawing.Size(91, 33);
             this.compileButton.TabIndex = 5;
             this.compileButton.Text = "Compile...";
-            this.compileButton.UseVisualStyleBackColor = true;
+            this.compileButton.UseVisualStyleBackColor = false;
             this.compileButton.Click += new System.EventHandler(this.compileButton_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.objectsButton);
-            this.groupBox1.Controls.Add(this.roomsButton);
-            this.groupBox1.Controls.Add(this.soundsButton);
-            this.groupBox1.Location = new System.Drawing.Point(3, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 64);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menus";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.compileButton);
-            this.groupBox2.Controls.Add(this.runButton);
-            this.groupBox2.Location = new System.Drawing.Point(3, 73);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(186, 63);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Compiling";
             // 
             // contextMenuStrip1
             // 
@@ -194,14 +187,40 @@ namespace TheAirBlow.Engine.Standalone
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 674);
             this.panel1.TabIndex = 11;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.compileButton);
+            this.groupBox2.Controls.Add(this.runButton);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(3, 69);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(307, 62);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Compiling";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.objectsButton);
+            this.groupBox1.Controls.Add(this.soundsButton);
+            this.groupBox1.Controls.Add(this.roomsButton);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(307, 60);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Menus";
             // 
             // label2
             // 
@@ -218,9 +237,11 @@ namespace TheAirBlow.Engine.Standalone
             // MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1283, 701);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainMenu";
@@ -229,10 +250,10 @@ namespace TheAirBlow.Engine.Standalone
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,12 +271,12 @@ namespace TheAirBlow.Engine.Standalone
         private System.Windows.Forms.Button soundsButton;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.Button compileButton;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

@@ -117,5 +117,10 @@ namespace TheAirBlow.Engine.Standalone
         {
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
