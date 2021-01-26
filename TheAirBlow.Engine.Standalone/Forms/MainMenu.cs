@@ -96,11 +96,13 @@ namespace TheAirBlow.Engine.Standalone
         private void newProjectButton_Click(object sender, EventArgs e)
         {
             ProjectSaving.NewProject();
+            checkBox1.Checked = ProjectSaving.project.splash;
         }
 
         private void openProjectButton_Click(object sender, EventArgs e)
         {
             ProjectSaving.LoadProject();
+            checkBox1.Checked = ProjectSaving.project.splash;
         }
 
         private void saveProjectButton_Click(object sender, EventArgs e)
@@ -115,12 +117,17 @@ namespace TheAirBlow.Engine.Standalone
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
+            checkBox1.Checked = ProjectSaving.project.splash;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ProjectSaving.project.splash = !ProjectSaving.project.splash;
         }
     }
 }

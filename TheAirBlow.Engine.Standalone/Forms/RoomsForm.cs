@@ -24,6 +24,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
         private Room room = new Room();
         private Color bg = Color.White;
         private GameObject currentObject;
+        private bool needToUpdate = true;
 
         private async void RoomsForm_Load(object sender, EventArgs e)
         {
@@ -73,9 +74,13 @@ namespace TheAirBlow.Engine.Standalone.Forms
                             room.roomObjects.RemoveAt(i);
                         }
 
+                        int posX = (size * forX) + 2;
+                        int posY = (size * forY) + 2;
+
                         if (e.Button != MouseButtons.Left)
                         {
-                            UpdateRoomView();
+                            g.FillRectangle(new SolidBrush(bg), new Rectangle(new Point(roomEditorX + posX, roomEditorY + posY), new Size(size, size)));
+                            UpdateRoomView(false);
                             return;
                         }
 
@@ -92,15 +97,21 @@ namespace TheAirBlow.Engine.Standalone.Forms
 
                         room.roomObjects.Add(obj);
 
-                        UpdateRoomView();
+                        UpdateRoomView(false);
                     }
                 }
             }
         }
 
-        private void RoomsForm_MovedEvent(object sender, EventArgs e)
+        private async void RoomsForm_MovedEvent(object sender, EventArgs e)
         {
-            UpdateRoomView();
+            if (needToUpdate)
+            {
+                needToUpdate = false;
+                UpdateRoomView();
+                await Task.Delay(500);
+                needToUpdate = true;
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,7 +179,12 @@ namespace TheAirBlow.Engine.Standalone.Forms
 
         private void UpdateRoomView()
         {
-            DrawGrid(Color.Black, 0, 0, (int)cellSize.Value, (int)cellWidth.Value, (int)cellHeight.Value, 2);
+            DrawGrid(Color.Black, 0, 0, (int)cellSize.Value, (int)cellWidth.Value, (int)cellHeight.Value, 2, true);
+        }
+
+        private void UpdateRoomView(bool refreshBG)
+        {
+            DrawGrid(Color.Black, 0, 0, (int)cellSize.Value, (int)cellWidth.Value, (int)cellHeight.Value, 2, refreshBG);
         }
 
         private void DrawLine(Color color, int x1, int y1, int x2, int y2, int width)
@@ -176,7 +192,7 @@ namespace TheAirBlow.Engine.Standalone.Forms
             g.DrawLine(new Pen(color, width), roomEditorX + x1, roomEditorY + y1, roomEditorX + x2, roomEditorY + y2);
         }
 
-        private async void DrawGrid(Color color, int x, int y, int size, int width, int height, int penWidth)
+        private async void DrawGrid(Color color, int x, int y, int size, int width, int height, int penWidth, bool refreshBG)
         {
             int originalWidth = 1110;
             int originalHeight = 675;
@@ -191,7 +207,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
 
             g = CreateGraphics();
 
-            g.Clear(bg);
+            if (refreshBG)
+                g.Clear(bg);
 
             for (int i = 0; i <= height; i++)
             {
@@ -211,10 +228,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
                 {
                     for (int i = 0; i < room.roomObjects.Count; i++)
                     {
-                        if (room.roomObjects[i].x != forX) continue;
-                        if (room.roomObjects[i].y != forY) continue;
                         int posX = (size * forX) + penWidth;
                         int posY = (size * forY) + penWidth;
+                        if (room.roomObjects[i].x != forX
+                            || room.roomObjects[i].y != forY) continue;
                         if (ProjectSaving.GetObjectByName(room.roomObjects[i].name) == null) return;
                         g.DrawImage(Image.FromFile(ProjectSaving.path + "\\Assets\\Sprites\\" 
                             + ProjectSaving.GetObjectByName(room.roomObjects[i].name).sprite), roomEditorX + posX, roomEditorY + posY);

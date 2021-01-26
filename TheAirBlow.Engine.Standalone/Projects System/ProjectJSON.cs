@@ -9,6 +9,7 @@ namespace TheAirBlow.Engine.Standalone
 {
     public class ProjectJSON
     {
+        public bool splash = true;
         public int intVer = Program.intVer;
         public string version = Program.version;
         public string name = "";
