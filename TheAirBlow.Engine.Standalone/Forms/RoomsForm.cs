@@ -27,7 +27,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
 
         private async void RoomsForm_Load(object sender, EventArgs e)
         {
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | 
+                ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
             g = CreateGraphics();
 
             Move += new EventHandler(RoomsForm_MovedEvent);

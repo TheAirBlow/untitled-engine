@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAirBlow.Engine.Standalone", "TheAirBlow.Engine.Standalone\TheAirBlow.Engine.Standalone.csproj", "{791FB0EE-336E-4B8F-9514-7F5F8504878C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAirBlow.Engine.API", "TheAirBlow.Engine.API\TheAirBlow.Engine.API.csproj", "{82C224B2-2250-4D70-B8FB-4A966EACFFF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAirBlow.Engine.Runner", "TheAirBlow.Engine.Runner\TheAirBlow.Engine.Runner.csproj", "{AA03C1AB-D1A9-415E-8BEC-492760BD97F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{791FB0EE-336E-4B8F-9514-7F5F8504878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{791FB0EE-336E-4B8F-9514-7F5F8504878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{791FB0EE-336E-4B8F-9514-7F5F8504878C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C224B2-2250-4D70-B8FB-4A966EACFFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C224B2-2250-4D70-B8FB-4A966EACFFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C224B2-2250-4D70-B8FB-4A966EACFFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C224B2-2250-4D70-B8FB-4A966EACFFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA03C1AB-D1A9-415E-8BEC-492760BD97F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA03C1AB-D1A9-415E-8BEC-492760BD97F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA03C1AB-D1A9-415E-8BEC-492760BD97F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA03C1AB-D1A9-415E-8BEC-492760BD97F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
