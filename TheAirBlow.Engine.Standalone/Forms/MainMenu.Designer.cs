@@ -44,16 +44,17 @@ namespace TheAirBlow.Engine.Standalone
             this.compileButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -161,7 +162,7 @@ namespace TheAirBlow.Engine.Standalone
             this.runButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.runButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.runButton.ForeColor = System.Drawing.Color.Black;
-            this.runButton.Location = new System.Drawing.Point(106, 21);
+            this.runButton.Location = new System.Drawing.Point(103, 21);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(76, 33);
             this.runButton.TabIndex = 4;
@@ -174,7 +175,7 @@ namespace TheAirBlow.Engine.Standalone
             this.compileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.compileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.compileButton.ForeColor = System.Drawing.Color.Black;
-            this.compileButton.Location = new System.Drawing.Point(9, 21);
+            this.compileButton.Location = new System.Drawing.Point(6, 21);
             this.compileButton.Name = "compileButton";
             this.compileButton.Size = new System.Drawing.Size(91, 33);
             this.compileButton.TabIndex = 5;
@@ -201,8 +202,31 @@ namespace TheAirBlow.Engine.Standalone
             this.panel1.Size = new System.Drawing.Size(313, 674);
             this.panel1.TabIndex = 11;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(3, 137);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(307, 51);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Settings";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(10, 22);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(111, 21);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Show Splash";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.compileButton);
             this.groupBox2.Controls.Add(this.runButton);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -238,27 +262,18 @@ namespace TheAirBlow.Engine.Standalone
             this.label2.TabIndex = 9;
             this.label2.Text = "Copyright (C) TheAirBlow 2021";
             // 
-            // groupBox3
+            // button1
             // 
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(3, 137);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(307, 51);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Settings";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Show Splash";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(185, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 33);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Test Binary";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainMenu
             // 
@@ -278,10 +293,10 @@ namespace TheAirBlow.Engine.Standalone
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,6 +322,7 @@ namespace TheAirBlow.Engine.Standalone
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

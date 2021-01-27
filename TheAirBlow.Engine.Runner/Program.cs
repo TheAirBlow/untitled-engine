@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace TheAirBlow.Engine.Runner
                 SetProcessDPIAware();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                MainRunner.Start();
+                MainRunner.Start(Directory.GetCurrentDirectory(), false);
             }
             catch (Exception e)
             {

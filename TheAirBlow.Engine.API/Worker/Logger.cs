@@ -42,7 +42,7 @@ namespace TheAirBlow.Engine.API.Worker
 
         internal static string GetCurrentTime()
         {
-            return DateTime.Now.ToString(@"[.hh\:mm\:ss] ");
+            return DateTime.Now.ToString(@"[hh\:mm\:ss] ");
         }
     }
 }

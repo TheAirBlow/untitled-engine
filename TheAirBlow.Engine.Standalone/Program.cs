@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -18,6 +19,13 @@ namespace TheAirBlow.Engine.Standalone
         [STAThread]
         public static void Main(string[] args)
         {
+            if (!File.Exists(Directory.GetCurrentDirectory() + "\\runner.exe"))
+            {
+                MessageBox.Show($"ERROR: Could not find required file \"runner.exe\"",
+                    "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string path = "";
             foreach (string str in args) path += str;
 

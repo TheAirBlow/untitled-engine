@@ -77,7 +77,6 @@
       <DependentUpon>SoundsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Projects System\ProjectJSON.cs" />
     <Compile Include="Projects System\ProjectSaving.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AboutForm.resx">
@@ -121,6 +120,12 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheAirBlow.Engine.API\TheAirBlow.Engine.API.csproj">
+      <Project>{82c224b2-2250-4d70-b8fb-4a966eacfff3}</Project>
+      <Name>TheAirBlow.Engine.API</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

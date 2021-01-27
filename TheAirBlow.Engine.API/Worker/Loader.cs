@@ -18,18 +18,21 @@ namespace TheAirBlow.Engine.API.Worker
         internal static RoomsJSON rooms = new RoomsJSON();
         internal static SoundsJSON sounds = new SoundsJSON();
         internal static GameObjectsJSON objects = new GameObjectsJSON();
+        internal static bool debug = false;
         public static MainForm form = new MainForm();
-        
-        public static void Load(string newPath)
+
+        public static void Load(string newPath, bool newDebug)
         {
             if (!loaded)
             {
                 loaded = true;
+                debug = newDebug;
                 Logger.Log("[LOADER] Loading game's project...");
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
                 path = newPath;
                 Logger.path = path;
+                form = new MainForm();
 
                 string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
                 string[] files = { "\\project.uep", "\\Assets\\sounds.ued",

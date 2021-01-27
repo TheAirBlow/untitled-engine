@@ -10,18 +10,13 @@ namespace TheAirBlow.Engine.API.Worker
 {
     public static class MainRunner
     {
-        public static void Start()
+        public static void Start(string dir, bool debug)
         {
-            string dir = Directory.GetCurrentDirectory() + "\\Game\\";
-            if (!Directory.Exists(dir))
-            {
-                throw new Exception("ERROR: There is no game in runner's folder!");
-            }
-
             try
             {
-                Loader.Load(dir);
-                Application.Run(Loader.form);
+                Loader.Load(dir, debug);
+                try { Application.Run(Loader.form); }
+                catch { Loader.form.Show(); }
             }
             catch (Exception e)
             {

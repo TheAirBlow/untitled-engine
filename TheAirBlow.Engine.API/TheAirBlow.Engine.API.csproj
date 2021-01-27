@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binary\BinaryBuilder.cs" />
+    <Compile Include="Binary\BinaryData.cs" />
     <Compile Include="Worker\Loader.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -51,6 +53,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker\Logger.cs" />
+    <Compile Include="Worker\ProjectJSON.cs" />
     <Compile Include="Worker\Runner.cs" />
     <Compile Include="Worker\Worker.cs" />
   </ItemGroup>
@@ -63,12 +66,6 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TheAirBlow.Engine.Standalone\TheAirBlow.Engine.Standalone.csproj">
-      <Project>{791fb0ee-336e-4b8f-9514-7f5f8504878c}</Project>
-      <Name>TheAirBlow.Engine.Standalone</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
