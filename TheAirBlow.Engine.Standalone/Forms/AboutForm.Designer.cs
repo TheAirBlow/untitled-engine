@@ -35,9 +35,21 @@ namespace TheAirBlow.Engine.Standalone.Forms
             "TheAirBlow.Engine.Standalone",
             "TheAirBlow"}, -1);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "API",
+            "TheAirBlow.Engine.API",
+            "TheAirBlow"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Runner",
+            "TheAirBlow.Engine.Runner",
+            "TheAirBlow"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Library",
             "Newtonsoft.Json",
             "NewtonSoft"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Library",
+            "Costura.Fody",
+            "Fody Team"}, -1);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -159,7 +171,10 @@ namespace TheAirBlow.Engine.Standalone.Forms
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
-            listViewItem2});
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(7, 22);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(592, 144);
