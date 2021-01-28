@@ -17,5 +17,6 @@ Every project should have one room minimum.
 
 ## Compiling of the Game
 Currently player just loads the game from project (yes, everyone can get the project)
+
 *There is a indev "Game => Binary" feature that can be accessed by pressing "Test Binary" in the IDE.*
 
