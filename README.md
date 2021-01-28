@@ -1,6 +1,6 @@
 # Untitled Engine
 This is a Game Maker like game engine written just for fun.
-Currently is in development. Currently it only can draw objects and that's all.
+Currently is in development. It only can draw objects and that's all.
 
 ## Components
 
