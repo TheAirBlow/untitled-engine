@@ -19,8 +19,7 @@ namespace TheAirBlow.Engine.API.Worker
         internal static SoundsJSON sounds = new SoundsJSON();
         internal static GameObjectsJSON objects = new GameObjectsJSON();
         internal static bool debug = false;
-        public static MainForm form = new MainForm();
-
+        
         public static void Load(string newPath, bool newDebug)
         {
             if (!loaded)
@@ -32,7 +31,6 @@ namespace TheAirBlow.Engine.API.Worker
                 watch.Start();
                 path = newPath;
                 Logger.path = path;
-                form = new MainForm();
 
                 string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
                 string[] files = { "\\project.uep", "\\Assets\\sounds.ued",

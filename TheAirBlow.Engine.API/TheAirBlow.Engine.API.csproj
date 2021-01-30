@@ -44,13 +44,8 @@
   <ItemGroup>
     <Compile Include="Binary\BinaryBuilder.cs" />
     <Compile Include="Binary\BinaryData.cs" />
+    <Compile Include="Worker\Game.cs" />
     <Compile Include="Worker\Loader.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker\Logger.cs" />
     <Compile Include="Worker\ProjectJSON.cs" />
@@ -58,14 +53,18 @@
     <Compile Include="Worker\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder.Task">
+      <Version>3.8.0.1641</Version>
+    </PackageReference>
+    <PackageReference Include="MonoGame.Framework.WindowsDX">
+      <Version>3.8.0.1641</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Fonts.mgcb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -99,9 +99,9 @@ namespace TheAirBlow.Engine.Standalone
                 {
                     if (e.InnerException != null)
                         MessageBox.Show(e.Message +
-                            $"\nSub exception: {e.InnerException}", "Untitled Engine Runner");
+                            $"\n\nInner Exception: {e.InnerException.Message}", "Untitled Engine Runner", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        MessageBox.Show(e.Message, "Untitled Engine Runner");
+                        MessageBox.Show(e.Message, "Untitled Engine Runner", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }).Start();
         }
@@ -138,14 +138,12 @@ namespace TheAirBlow.Engine.Standalone
         private void newProjectButton_Click(object sender, EventArgs e)
         {
             ProjectSaving.NewProject();
-            checkBox1.Checked = ProjectSaving.project.splash;
             ProjectSaving.dirtyBit = false;
         }
 
         private void openProjectButton_Click(object sender, EventArgs e)
         {
             ProjectSaving.LoadProject();
-            checkBox1.Checked = ProjectSaving.project.splash;
             ProjectSaving.dirtyBit = false;
         }
 
@@ -161,18 +159,12 @@ namespace TheAirBlow.Engine.Standalone
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            checkBox1.Checked = ProjectSaving.project.splash;
             ProjectSaving.dirtyBit = false;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            ProjectSaving.project.splash = checkBox1.Checked;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -183,8 +175,7 @@ namespace TheAirBlow.Engine.Standalone
                 return;
             }
 
-            byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.project.splash,
-                ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
+            byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
 
             File.WriteAllBytes(ProjectSaving.path + "\\game.ueg", bytes);
         }

@@ -15,13 +15,16 @@ namespace TheAirBlow.Engine.API.Worker
             try
             {
                 Loader.Load(dir, debug);
-                try { Application.Run(Loader.form); }
-                catch { Loader.form.Show(); }
+                MainWorker.StartWorker();
+                MainWorker.game = new EngineGame();
+                MainWorker.game.Run();
             }
             catch (Exception e)
             {
                 throw new Exception("ERROR: An error occured while the game was loading or while the game loop." +
                     "\nWe'd recommend send game's developer file \"game.log\" in the game's folder.", e);
+                Loader.loaded = false;
+                MainWorker.loaded = false;
             }
         }
     }

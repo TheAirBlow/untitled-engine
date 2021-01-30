@@ -11,16 +11,12 @@ namespace TheAirBlow.Engine.API.Binary
 {
     public static class BinaryBuilder
     {
-        public static byte[] BuildBinary(string assets, bool splash, RoomsJSON rooms, SoundsJSON sounds, GameObjectsJSON objects)
+        public static byte[] BuildBinary(string assets, RoomsJSON rooms, SoundsJSON sounds, GameObjectsJSON objects)
         {
             try
             {
                 List<byte> bytes = new List<byte>();
                 Action<byte> add = new Action<byte>((obj) => { bytes.Add(obj); });
-
-                // Splash byte
-                if (splash) add(0xFF);
-                else add(0x00);
 
                 // Sounds (Byte 0x00)
                 foreach (Sound sound in sounds.sounds)

@@ -28,9 +28,9 @@ namespace TheAirBlow.Engine.Runner
             {
                 if (e.InnerException != null)
                     MessageBox.Show(e.Message +
-                        $"\nSub exception: {e.InnerException}", "Untitled Engine Runner");
+                        $"\n\nInner Exception: {e.InnerException.Message}", "Untitled Engine Runner", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show(e.Message, "Untitled Engine Runner");
+                    MessageBox.Show(e.Message, "Untitled Engine Runner", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

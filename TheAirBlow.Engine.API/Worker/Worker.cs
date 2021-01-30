@@ -14,7 +14,7 @@ namespace TheAirBlow.Engine.API
     {
         internal static bool loaded = false;
         internal static Room currentRoom;
-        public static Graphics g;
+        public static EngineGame game;
 
         public static void StartWorker()
         {
@@ -48,42 +48,6 @@ namespace TheAirBlow.Engine.API
             {
                 Logger.LogException(new Exception("Could not start worker: Game is not loaded yet!"));
                 throw new Exception("Could not start worker: Game is not loaded yet!");
-            }
-        }
-
-        internal static void Step()
-        {
-            UpdateRoomView();
-        }
-
-        internal static void UpdateRoomView()
-        {
-            DrawObjects(currentRoom.gridSize, currentRoom.gridWidth, currentRoom.gridHeight);
-        }
-
-        internal static void DrawObjects(int size, int width, int height)
-        {
-            for (int forX = 0; forX < width; forX++)
-            {
-                for (int forY = 0; forY < height; forY++)
-                {
-                    for (int i = 0; i < currentRoom.roomObjects.Count; i++)
-                    {
-                        if (currentRoom.roomObjects[i].x != forX) continue;
-                        if (currentRoom.roomObjects[i].y != forY) continue;
-                        int posX = size * forX;
-                        int posY = size * forY;
-                        if (Loader.GetObjectByName(currentRoom.roomObjects[i].name) == null)
-                        {
-                            Logger.LogException(new Exception("Worker Error: Could not load the object: " +
-                                $"{currentRoom.roomObjects[i].name}"));
-                            throw new Exception("Worker Error: Could not load the object: " +
-                                $"{currentRoom.roomObjects[i].name}");
-                        }
-                        g.DrawImage(Image.FromFile(Loader.path + "\\Assets\\Sprites\\"
-                            + Loader.GetObjectByName(currentRoom.roomObjects[i].name).sprite), posX, posY);
-                    }
-                }
             }
         }
     }
