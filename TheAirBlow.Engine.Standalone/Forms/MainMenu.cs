@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -178,6 +179,26 @@ namespace TheAirBlow.Engine.Standalone
             byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
 
             File.WriteAllBytes(ProjectSaving.path + "\\game.ueg", bytes);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ProjectSaving.path == "")
+            {
+                MessageBox.Show("Project is not created or loaded yet!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!File.Exists(ProjectSaving.path + "\\game.ueg"))
+            {
+                MessageBox.Show("Cannot find game's binary!", "Untitled Engine", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            BinaryData binary = BinaryLoader.LoadBinary(File.ReadAllBytes(ProjectSaving.path + "\\game.ueg"));
+            MessageBox.Show($"OBJECTS: {JsonConvert.SerializeObject(binary.objects)}" +
+                $"\n\nROOMS: {JsonConvert.SerializeObject(binary.rooms)}" +
+                $"\n\nSOUNDS: {JsonConvert.SerializeObject(binary.sounds)}", "Untitled Engine");
         }
     }
 }

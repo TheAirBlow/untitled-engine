@@ -27,11 +27,11 @@ namespace TheAirBlow.Engine.API.Binary
                     // Asset name
                     byte[] assetNameBytes = Encoding.ASCII.GetBytes(sound.name);
                     byte[] assetNameLength = BitConverter.GetBytes(assetNameBytes.Length);
-                    foreach (byte Byte in assetNameBytes) add(Byte);
                     foreach (byte Byte in assetNameLength) add(Byte);
+                    foreach (byte Byte in assetNameBytes) add(Byte);
 
-                    // Sound's data
-                    byte[] soundBytes = File.ReadAllBytes(assets + "Sounds\\" + sound.path);
+                    // Sound's filename
+                    byte[] soundBytes = Encoding.ASCII.GetBytes(sound.path);
                     byte[] soundLength = BitConverter.GetBytes(soundBytes.Length);
                     foreach (byte Byte in soundLength) add(Byte);
                     foreach (byte Byte in soundBytes) add(Byte);
@@ -49,6 +49,15 @@ namespace TheAirBlow.Engine.API.Binary
                     foreach (byte Byte in assetNameLength) add(Byte);
                     foreach (byte Byte in assetNameBytes) add(Byte);
 
+                    // Room Color R
+                    add(room.color.R);
+
+                    // Room Color G
+                    add(room.color.G);
+
+                    // Room Color B
+                    add(room.color.B);
+
                     // Grid Size
                     byte[] roomCellSize = BitConverter.GetBytes(room.gridSize);
                     foreach (byte Byte in roomCellSize) add(Byte);
@@ -60,6 +69,10 @@ namespace TheAirBlow.Engine.API.Binary
                     // Grid Height
                     byte[] roomCellHeight = BitConverter.GetBytes(room.gridHeight);
                     foreach (byte Byte in roomCellHeight) add(Byte);
+
+                    // Room Objects Count
+                    byte[] objectsCount = BitConverter.GetBytes(room.roomObjects.Count);
+                    foreach (byte Byte in objectsCount) add(Byte);
 
                     // Room Objects
                     foreach (RoomObject obj in room.roomObjects)
@@ -91,17 +104,17 @@ namespace TheAirBlow.Engine.API.Binary
                     foreach (byte Byte in assetNameLength) add(Byte);
                     foreach (byte Byte in assetNameBytes) add(Byte);
 
+                    // Object's code
+                    byte[] codeBytes = Encoding.ASCII.GetBytes(obj.code);
+                    byte[] codeLength = BitConverter.GetBytes(codeBytes.Length);
+                    foreach (byte Byte in codeLength) add(Byte);
+                    foreach (byte Byte in codeBytes) add(Byte);
+
                     // Sprite's data
                     byte[] spriteBytes = File.ReadAllBytes(assets + "Sprites\\" + obj.sprite);
                     byte[] spriteLength = BitConverter.GetBytes(spriteBytes.Length);
                     foreach (byte Byte in spriteLength) add(Byte);
                     foreach (byte Byte in spriteBytes) add(Byte);
-
-                    // Object's code
-                    byte[] codeBytes = Encoding.ASCII.GetBytes(obj.code);
-                    byte[] codeLength = BitConverter.GetBytes(spriteBytes.Length);
-                    foreach (byte Byte in codeLength) add(Byte);
-                    foreach (byte Byte in codeBytes) add(Byte);
                 }
 
                 return bytes.ToArray();

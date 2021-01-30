@@ -100,7 +100,8 @@ namespace TheAirBlow.Engine.Standalone.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            player.Stop();
+            try { player.Stop(); }
+            catch { }
         }
 
         private void button3_Click(object sender, EventArgs e)

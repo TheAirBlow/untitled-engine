@@ -21,10 +21,10 @@ namespace TheAirBlow.Engine.API.Worker
             }
             catch (Exception e)
             {
-                throw new Exception("ERROR: An error occured while the game was loading or while the game loop." +
-                    "\nWe'd recommend send game's developer file \"game.log\" in the game's folder.", e);
                 Loader.loaded = false;
                 MainWorker.loaded = false;
+                throw new Exception("ERROR: An error occured while the game was loading or while the game loop." +
+                    "\nWe'd recommend send game's developer file \"game.log\" in the game's folder.", e);
             }
         }
     }

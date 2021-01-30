@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Binary\BinaryBuilder.cs" />
     <Compile Include="Binary\BinaryData.cs" />
+    <Compile Include="Binary\BinaryLoader.cs" />
     <Compile Include="Worker\Game.cs" />
     <Compile Include="Worker\Loader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

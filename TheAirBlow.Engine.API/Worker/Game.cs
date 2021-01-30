@@ -21,6 +21,7 @@ namespace TheAirBlow.Engine.API.Worker
 
         public EngineGame()
         {
+            Logger.Log("[GAME] Initializing...");
             Exiting += ExitingEvent;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Assets";
@@ -30,6 +31,7 @@ namespace TheAirBlow.Engine.API.Worker
 
         private void ExitingEvent(object sender, EventArgs e)
         {
+            Logger.Log("[GAME] Exiting...");
             Loader.loaded = false;
             MainWorker.loaded = false;
         }
@@ -41,6 +43,7 @@ namespace TheAirBlow.Engine.API.Worker
 
         protected override void LoadContent()
         {
+            Logger.Log("[GAME] Loading the game's assets...");
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             foreach (GameObject obj in Loader.objects.objects)
