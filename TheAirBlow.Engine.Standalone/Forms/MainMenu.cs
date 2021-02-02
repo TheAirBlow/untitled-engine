@@ -92,6 +92,8 @@ namespace TheAirBlow.Engine.Standalone
                 return;
             }
 
+            byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
+            File.WriteAllBytes(ProjectSaving.path + "\\game.ueg", bytes);
             ProjectSaving.SaveProject();
 
             new Thread(() => {
@@ -122,6 +124,8 @@ namespace TheAirBlow.Engine.Standalone
             if (result == DialogResult.OK) path = folderBrowserDialog1.SelectedPath;
             else return;
 
+            byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
+            File.WriteAllBytes(ProjectSaving.path + "\\game.ueg", bytes);
             ProjectSaving.SaveProject();
 
             File.Copy(Directory.GetCurrentDirectory() + "\\runner.exe", path + "\\runner.exe", true);
@@ -177,7 +181,6 @@ namespace TheAirBlow.Engine.Standalone
             }
 
             byte[] bytes = BinaryBuilder.BuildBinary(ProjectSaving.path + "\\Assets\\", ProjectSaving.rooms, ProjectSaving.sounds, ProjectSaving.objects);
-
             File.WriteAllBytes(ProjectSaving.path + "\\game.ueg", bytes);
         }
 

@@ -36,7 +36,7 @@ namespace TheAirBlow.Engine.API.Binary
     public class BinaryObject
     {
         public int binaryLength;
-        public byte[] spriteData;
+        public string spritePath;
         public string name;
         public string code;
     }

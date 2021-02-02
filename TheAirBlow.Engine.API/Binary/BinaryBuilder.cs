@@ -110,11 +110,11 @@ namespace TheAirBlow.Engine.API.Binary
                     foreach (byte Byte in codeLength) add(Byte);
                     foreach (byte Byte in codeBytes) add(Byte);
 
-                    // Sprite's data
-                    byte[] spriteBytes = File.ReadAllBytes(assets + "Sprites\\" + obj.sprite);
-                    byte[] spriteLength = BitConverter.GetBytes(spriteBytes.Length);
-                    foreach (byte Byte in spriteLength) add(Byte);
-                    foreach (byte Byte in spriteBytes) add(Byte);
+                    // Sprite's path
+                    byte[] pathBytes = Encoding.ASCII.GetBytes(obj.sprite);
+                    byte[] pathLength = BitConverter.GetBytes(pathBytes.Length);
+                    foreach (byte Byte in pathLength) add(Byte);
+                    foreach (byte Byte in pathBytes) add(Byte);
                 }
 
                 return bytes.ToArray();

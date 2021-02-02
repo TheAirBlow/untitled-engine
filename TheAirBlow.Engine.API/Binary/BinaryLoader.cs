@@ -100,9 +100,9 @@ namespace TheAirBlow.Engine.API.Binary
             length = BitConverter.ToInt32(bytes, offset);
             offset += 4;
             byte[] dataBytes = new byte[length];
-            for (int i = offset; i < length; i++)
+            for (int i = offset; i < (length + offset); i++)
                 dataBytes[i - offset] += bytes[i];
-            obj.spriteData = dataBytes;
+            obj.spritePath = Encoding.ASCII.GetString(dataBytes);
             offset += length;
 
             obj.binaryLength = offset - originalOffset;

@@ -2,56 +2,78 @@
 
 Every object will have these methods:
 ```csharp
-public static void OnLoad()
+// This will be called when object is created
+public static void Start()
 {
-	// Occurs when game is started and NOT loaded yet (unsafe)
+	
 }
 
-public static void OnCreate()
+// This will be called every update
+public static void Update()
 {
-	// Occurs when game is started and fully loaded (safe)
+	
 }
 
+// This will be called when object is destroyed
 public static void OnDestroy()
 {
-	// Occurs when object is getting destroyed.
+	
 }
 
-public static void OnAlarm()
-{
-	// Occurs when alarm is triggered.
-}
-
-public static void OnStep()
-{
-	// Occurs every step.
-}
-
+// This will be called when colliding with a solid object
 public static void OnCollision(string obj)
 {
-	// Occurs when object collides with a SOLID object.
+	
 }
 
+// This will be called when colliding with any object
 public static void OnMeeting(string obj)
 {
-	// Occurs when object collides with an object.
-}
-
-public static void OnKeyPressed(EngineKey key)
-{
-	// Occurs when user pressed a key.
-}
-
-public static void OnMouseButtonPressed(EngineButton btn)
-{
-	// Occurs when user pressed a mouse button.
-}
-
-public static void OnPressed(EngineButton btn)
-{
-	// Occurs when user pressed a mouse button ON THIS OBJECT.
+	
 }
 ```
 
-*SAFE* means that in this method you can do any API call.
-*UNSAFE* means that in this method you can NOT do any API calls beacuse engine is not loaded yet.
+# APIs
+```csharp
+// Start an alarm with a delay
+void alarm(0)
+
+// Get current alarm state
+bool alarm()
+
+// Move object by X
+void move_x(0)
+
+// Move object by Y
+void move_y(0)
+
+// Move object by both axis
+void move(0, 0)
+
+// Move object by X on pos
+// m, x
+void move_x(0, 0)
+
+// Move object by Y on pos
+// m, y
+void move_y(0, 0)
+
+// Move object by both axis on pos
+// m, x, y
+void move(0, 0, 0)
+
+// Destroy an object on pos
+void destroy(0, 0)
+
+// Is key pressed
+bool is_pressed_keyboard(key)
+
+// Is mouse button pressed
+bool is_pressed_mouse(key)
+
+// Is object clicked
+bool is_clicked()
+
+// Play a sound
+void snd_play("hello")
+```

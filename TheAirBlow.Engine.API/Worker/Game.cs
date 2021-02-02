@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using TheAirBlow.Engine.API.Binary;
 using TheAirBlow.Engine.Standalone;
 
 namespace TheAirBlow.Engine.API.Worker
@@ -46,17 +48,21 @@ namespace TheAirBlow.Engine.API.Worker
             Logger.Log("[GAME] Loading the game's assets...");
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            foreach (GameObject obj in Loader.objects.objects)
-            {
-                if (obj.sprite != "")
+            foreach (BinaryObject obj in Loader.data.objects)
+                if (obj.spritePath != "")
                 {
-                    if (!File.Exists(Loader.path + "\\Assets\\Sprites\\" + obj.sprite))
-                        Throw(new Exception($"Could not load objects' sprites: GameObject's {obj.name} sprite wasn't found in game's Assets."));
+                    string path;
+                    if (Loader.debug) path = Loader.path + "\\Assets\\Sprites\\" + obj.spritePath;
+                    else path = Loader.path + "\\Sprites\\" + obj.spritePath;
 
-                    using (FileStream fileStream = new FileStream(Loader.path + "\\Assets\\Sprites\\" + obj.sprite, FileMode.Open))
-                        textures.Add(obj.name, Texture2D.FromStream(graphics.GraphicsDevice, fileStream));
+                    MessageBox.Show(obj.spritePath, "Debug", new string[] { "OK" });
+
+                    if (!File.Exists(path))
+                        Throw(new Exception($"Could not load sprites: Sprite for GameObject {obj.name} does not exist."));
+
+                    using (FileStream stream = File.OpenRead(path))
+                        textures.Add(obj.name, Texture2D.FromStream(graphics.GraphicsDevice, stream));
                 }
-            }
 
             font = Content.Load<SpriteFont>("main");
         }
@@ -74,7 +80,7 @@ namespace TheAirBlow.Engine.API.Worker
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(MainWorker.currentRoom.color.R, MainWorker.currentRoom.color.G, MainWorker.currentRoom.color.B));
+            GraphicsDevice.Clear(new Microsoft.Xna.Framework.Color(MainWorker.currentRoom.color.R, MainWorker.currentRoom.color.G, MainWorker.currentRoom.color.B));
             spriteBatch.Begin();
 
             foreach (RoomObject obj in MainWorker.currentRoom.roomObjects)
@@ -84,8 +90,9 @@ namespace TheAirBlow.Engine.API.Worker
                     int posX = obj.x * MainWorker.currentRoom.gridSize;
                     int posY = obj.y * MainWorker.currentRoom.gridSize;
 
-                    spriteBatch.Draw(textures[obj.name], new Rectangle(new Point(posX, posY), 
-                        new Point(MainWorker.currentRoom.gridSize, MainWorker.currentRoom.gridSize)), Color.White);
+                    spriteBatch.Draw(textures[obj.name], new Microsoft.Xna.Framework.Rectangle(new Microsoft.Xna.Framework.Point(posX, posY), 
+                        new Microsoft.Xna.Framework.Point(MainWorker.currentRoom.gridSize, MainWorker.currentRoom.gridSize)), 
+                        Microsoft.Xna.Framework.Color.White);
                 }
                 catch { }
             }

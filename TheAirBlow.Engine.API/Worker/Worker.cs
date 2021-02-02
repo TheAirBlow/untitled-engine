@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheAirBlow.Engine.API.Binary;
 using TheAirBlow.Engine.API.Worker;
 using TheAirBlow.Engine.Standalone;
 
@@ -13,7 +14,7 @@ namespace TheAirBlow.Engine.API
     public static class MainWorker
     {
         internal static bool loaded = false;
-        internal static Room currentRoom;
+        internal static BinaryRoom currentRoom;
         public static EngineGame game;
 
         public static void StartWorker()
@@ -27,13 +28,13 @@ namespace TheAirBlow.Engine.API
                 {
                     Logger.Log("[WORKER] Loading...");
                     loaded = true;
-                    if (Loader.rooms.rooms[0] == null)
+                    if (Loader.data.rooms[0] == null)
                     {
                         Logger.LogException(new Exception("Could not start worker: There is no rooms!"));
                         throw new Exception("Could not start worker: There is no rooms!");
                     }
 
-                    currentRoom = Loader.rooms.rooms[0];
+                    currentRoom = Loader.data.rooms[0];
 
                     watch.Stop();
                     Logger.Log($"[WORKER] Starting done in {watch.Elapsed}!");

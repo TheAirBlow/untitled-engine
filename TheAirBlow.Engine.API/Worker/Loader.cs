@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheAirBlow.Engine.API.Binary;
 using TheAirBlow.Engine.Standalone;
 
 namespace TheAirBlow.Engine.API.Worker
@@ -14,10 +15,13 @@ namespace TheAirBlow.Engine.API.Worker
     {
         internal static bool loaded = false;
         internal static string path = "";
+        /*
         internal static ProjectJSON project = new ProjectJSON();
         internal static RoomsJSON rooms = new RoomsJSON();
         internal static SoundsJSON sounds = new SoundsJSON();
         internal static GameObjectsJSON objects = new GameObjectsJSON();
+        */
+        internal static BinaryData data = new BinaryData();
         internal static bool debug = false;
         
         public static void Load(string newPath, bool newDebug)
@@ -32,9 +36,21 @@ namespace TheAirBlow.Engine.API.Worker
                 path = newPath;
                 Logger.path = path;
 
-                string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
-                string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
-                "\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
+                //string[] dirs = { "\\Assets", "\\Assets\\Sprites", "\\Assets\\Sounds" };
+                string[] dirs = new string[2];
+                if (debug)
+                {
+                    dirs[0] = "\\Assets\\Sounds";
+                    dirs[1] = "\\Assets\\Sprites";
+                }
+                else
+                {
+                    dirs[0] = "\\Sounds";
+                    dirs[1] = "\\Sprites";
+                }
+                //string[] files = { "\\project.uep", "\\Assets\\sounds.ued",
+                //"\\Assets\\objects.ued", "\\Assets\\rooms.ued" };
+                string[] files = { "\\game.ueg" };
 
                 foreach (string dir in dirs)
                     if (!Directory.Exists(path + dir))
@@ -52,15 +68,18 @@ namespace TheAirBlow.Engine.API.Worker
 
                 try
                 {
+                    data = BinaryLoader.LoadBinary(File.ReadAllBytes(path + "\\game.ueg"));
+                    /*
                     project = JsonConvert.DeserializeObject<ProjectJSON>(File.ReadAllText(path + files[0]));
                     rooms = JsonConvert.DeserializeObject<RoomsJSON>(File.ReadAllText(path + files[3]));
                     sounds = JsonConvert.DeserializeObject<SoundsJSON>(File.ReadAllText(path + files[1]));
                     objects = JsonConvert.DeserializeObject<GameObjectsJSON>(File.ReadAllText(path + files[2]));
+                    */
                 }
                 catch (Exception e)
                 {
-                    Logger.LogException(new Exception($"Cound not load the game: An error occured.", e));
-                    throw new Exception($"Cound not load the game: An error occured.", e);
+                    Logger.LogException(new Exception($"Cound not load the game: {e.Message}", e));
+                    throw new Exception($"Cound not load the game: {e.Message}", e);
                 }
 
                 watch.Stop();
@@ -81,16 +100,16 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
             
-            for (int i = 0; i < sounds.sounds.Count; i++)
+            for (int i = 0; i < data.sounds.Count; i++)
             {
-                if (sounds.sounds[i].name == name)
-                    return sounds.sounds[i].path;
+                if (data.sounds[i].name == name)
+                    return data.sounds[i].path;
             }
 
             return null;
         }
 
-        public static GameObject GetObjectByName(string name)
+        public static BinaryObject GetObjectByName(string name)
         {
             if (!loaded)
             {
@@ -98,16 +117,16 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < objects.objects.Count; i++)
+            for (int i = 0; i < data.objects.Count; i++)
             {
-                if (objects.objects[i].name == name)
-                    return objects.objects[i];
+                if (data.objects[i].name == name)
+                    return data.objects[i];
             }
 
             return null;
         }
 
-        public static Room GetRoomByName(string name)
+        public static BinaryRoom GetRoomByName(string name)
         {
             if (!loaded)
             {
@@ -115,10 +134,10 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < rooms.rooms.Count; i++)
+            for (int i = 0; i < data.rooms.Count; i++)
             {
-                if (rooms.rooms[i].name == name)
-                    return rooms.rooms[i];
+                if (data.rooms[i].name == name)
+                    return data.rooms[i];
             }
 
             return null;
@@ -132,9 +151,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < sounds.sounds.Count; i++)
+            for (int i = 0; i < data.sounds.Count; i++)
             {
-                if (sounds.sounds[i].name == name)
+                if (data.sounds[i].name == name)
                     return true;
             }
 
@@ -149,9 +168,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < rooms.rooms.Count; i++)
+            for (int i = 0; i < data.rooms.Count; i++)
             {
-                if (rooms.rooms[i].name == name)
+                if (data.rooms[i].name == name)
                     return true;
             }
 
@@ -166,9 +185,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < objects.objects.Count; i++)
+            for (int i = 0; i < data.objects.Count; i++)
             {
-                if (objects.objects[i].name == name)
+                if (data.objects[i].name == name)
                     return true;
             }
 
@@ -183,9 +202,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < sounds.sounds.Count; i++)
+            for (int i = 0; i < data.sounds.Count; i++)
             {
-                if (sounds.sounds[i].name == name)
+                if (data.sounds[i].name == name)
                     return i;
             }
 
@@ -200,9 +219,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < rooms.rooms.Count; i++)
+            for (int i = 0; i < data.rooms.Count; i++)
             {
-                if (rooms.rooms[i].name == name)
+                if (data.rooms[i].name == name)
                     return i;
             }
 
@@ -217,9 +236,9 @@ namespace TheAirBlow.Engine.API.Worker
                 throw new Exception("Could not get something: Game is not loaded yet!");
             }
 
-            for (int i = 0; i < objects.objects.Count; i++)
+            for (int i = 0; i < data.objects.Count; i++)
             {
-                if (objects.objects[i].name == name)
+                if (data.objects[i].name == name)
                     return i;
             }
 
