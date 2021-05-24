@@ -60,11 +60,25 @@ input mouse_x
 input mouse_y
 
 # Play a sound
-input sound_play 'hello'
+method sound_play 'hello'
 
 # Play a sound repeating
-input sound_play_repeat 'hello'
+method sound_play_repeat 'hello'
 
 # Stop a sound
-input sound_stop 'hello'
+method sound_stop 'hello'
 ```
+
+# Exceptions
+
+## SyntaxError
+Will be thrown when there's a syntax error
+
+## MethodShouldNotBeInput
+Will be thrown when a function should be called using 'method'
+
+## MethodShouldBeInput
+Will be thrown when a function should be called using 'input'
+
+## WrongEventArgument
+Will be thrown when an event or function have wrong argument
