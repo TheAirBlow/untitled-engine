@@ -1,79 +1,70 @@
 # Coding
 
 Every object will have these methods:
-```csharp
-// This will be called when object is created
-public static void Start()
-{
-	
-}
+```
+# This will be called when object is created
+event create begin
 
-// This will be called every update
-public static void Update()
-{
-	
-}
+end
 
-// This will be called when object is destroyed
-public static void OnDestroy()
-{
-	
-}
+# This will be called every update
+event update begin
 
-// This will be called when colliding with a solid object
-public static void OnCollision(string obj)
-{
-	
-}
+end
 
-// This will be called when colliding with any object
-public static void OnMeeting(string obj)
-{
-	
-}
+# This will be called when object is destroyed
+event destroy begin
+
+end
+
+# This will be called when colliding with a solid object
+# c_obj is object
+event collision args c_obj begin
+
+end
+
+# This will be called when colliding with any object
+# m_obj is object
+event meeting args m_obj begin
+
+end
 ```
 
 # APIs
-```csharp
-// Start an alarm with a delay
-void alarm(0)
+```
+# Start an alarm with a delay
+method alarm 0 0
 
-// Get current alarm state
-bool alarm()
+# Move object by X
+method movex 0
 
-// Move object by X
-void move_x(0)
+# Move object by Y
+method movey 0
 
-// Move object by Y
-void move_y(0)
+# Move object by both axis
+method move 0 0
 
-// Move object by both axis
-void move(0, 0)
+# Destroy an object
+method destroy 
 
-// Move object by X on pos
-// m, x
-void move_x(0, 0)
+# Is key pressed
+input keyboard_pressed 'x'
 
-// Move object by Y on pos
-// m, y
-void move_y(0, 0)
+# Is mouse button pressed
+input mouse_pressed 0
 
-// Move object by both axis on pos
-// m, x, y
-void move(0, 0, 0)
+# Get mouse X
+input mouse_x
 
-// Destroy an object on pos
-void destroy(0, 0)
+# Get mouse Y
+input mouse_y
 
-// Is key pressed
-bool is_pressed_keyboard(key)
+# Play a sound
+input sound_play 'hello'
 
-// Is mouse button pressed
-bool is_pressed_mouse(key)
+# Play a sound repeating
+input sound_play_repeat 'hello'
 
-// Is object clicked
-bool is_clicked()
-
-// Play a sound
-void snd_play("hello")
+# Stop a sound
+input sound_stop 'hello'
 ```
