@@ -3,7 +3,7 @@ This is a GameMaker-like game engine written just for fun.
 
 **⚠️ WARNING: Currently this is in development. ⚠️**
 
-## ✔️ Components
+## Components
 
 ### 📗 Rooms - What makes your game run
 Room is a grid of Objects.
